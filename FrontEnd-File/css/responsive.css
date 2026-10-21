@@ -1926,3 +1926,19 @@ button {
     transform: none !important;
   }
 }
+
+/* =========================================================
+   MOBILE SAFETY OVERRIDE — PREVENT BLANK SCREEN COLLAPSE
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Force all page sections to remain visible on mobile viewports */
+  .reveal,
+  section,
+  main,
+  .featured-sidama,
+  .projects-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}
