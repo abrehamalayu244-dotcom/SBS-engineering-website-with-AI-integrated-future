@@ -1093,7 +1093,7 @@ app.post("/api/chat", async (req, res) => {
 // STATIC FRONTEND
 // ============================================================
 
-const FRONTEND_PATH = path.join(__dirname, "SBS-engineering-website-with-AI-integrated-future-main", "FrontEnd");
+const FRONTEND_PATH = path.join(__dirname, "FrontEnd-File");
 
 app.use(express.static(FRONTEND_PATH));
 
