@@ -867,3 +867,310 @@
   .sidama-media-grid { grid-template-columns: 1fr; }
   .sidama-lightbox-dialog { padding: 16px; }
 }
+
+
+/* =========================================================
+   SIDAMA FEATURED PROJECT & GALLERY RESPONSIVENESS FIX
+   ========================================================= */
+
+.featured-sidama { 
+    padding-top: 40px; 
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+}
+
+.sidama-part {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-soft);
+  display: block !important;
+}
+.sidama-part:first-of-type { border-top: 0; padding-top: 0; }
+
+.sidama-part-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.sidama-part-number {
+  flex: 0 0 auto;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(212,166,74,.12);
+  color: var(--secondary-dark);
+  font-family: var(--font-heading);
+  font-size: .95rem; font-weight: 700;
+}
+.sidama-part-head h3 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  color: var(--primary-color);
+}
+.sidama-part-head p {
+  margin: 0;
+  font-size: .85rem;
+  color: var(--text-light);
+}
+
+.sidama-list {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidama-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-color);
+  font-size: .92rem;
+  line-height: 1.7;
+}
+.sidama-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.sidama-media-label {
+  margin: 28px 0 14px;
+  color: var(--primary-color);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* --- Universal Responsive Media Grid --- */
+.sidama-media-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+.sidama-media-item {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-soft) !important;
+  background: var(--surface-soft) !important;
+  cursor: pointer !important;
+}
+
+.sidama-media-item img,
+.sidama-media-item video {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  display: block !important;
+  pointer-events: none;
+}
+
+.sidama-media-caption {
+  padding: 10px 12px !important;
+  background: #ffffff !important;
+  color: #28394b !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  border-top: 1px solid var(--border-soft) !important;
+}
+
+/* Play button overlay */
+.sidama-media-play {
+  position: absolute !important;
+  top: calc(50% - 20px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 48px !important; 
+  height: 48px !important;
+  display: grid !important; 
+  place-items: center !important;
+  border: 0 !important; 
+  border-radius: 50% !important;
+  background: rgba(11,31,54,.75) !important;
+  color: var(--white) !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  z-index: 2;
+}
+
+/* Mobile & Tablet Adaptation */
+@media (max-width: 992px) {
+  .sidama-media-grid { 
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; 
+  }
+}
+
+@media (max-width: 600px) {
+  .sidama-media-grid { 
+    grid-template-columns: 1fr !important; 
+  }
+}
+
+/* =====================================================
+   SIDAMA TABBED GALLERY STYLING
+   ===================================================== */
+
+/* Gallery Filter Tabs */
+.sidama-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.sidama-tab-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--border-color, #e5e7eb);
+  background: var(--white, #ffffff);
+  color: var(--primary-color, #0b1f36);
+  font-family: var(--font-body, "Inter", sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-xs, 0 2px 8px rgba(11, 31, 54, 0.05));
+}
+
+.sidama-tab-btn:hover {
+  border-color: var(--secondary-color, #d4a64a);
+  background: rgba(212, 166, 74, 0.06);
+  transform: translateY(-2px);
+}
+
+.sidama-tab-btn.active {
+  background: var(--primary-color, #0b1f36);
+  color: var(--white, #ffffff);
+  border-color: var(--primary-color, #0b1f36);
+  box-shadow: var(--shadow-sm, 0 6px 20px rgba(11, 31, 54, 0.07));
+}
+
+/* =====================================================
+   UNIFIED MEDIA GRID & FRAMES
+   ===================================================== */
+
+.sidama-media-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.sidama-media-item {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-soft, rgba(11, 31, 54, 0.08)) !important;
+  background: var(--surface, #ffffff) !important;
+  box-shadow: var(--shadow-xs, 0 2px 8px rgba(11, 31, 54, 0.05)) !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.sidama-media-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md, 0 14px 35px rgba(11, 31, 54, 0.11));
+  border-color: rgba(212, 166, 74, 0.35);
+}
+
+/* Hidden state when filtered by tabs */
+.sidama-media-item.hidden {
+  display: none !important;
+}
+
+/* Consistent 16:10 aspect ratio frame for photos and videos */
+.sidama-media-item img,
+.sidama-media-item video {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10 !important;
+  object-fit: cover !important;
+  display: block !important;
+  pointer-events: none;
+  background: #edf0f3;
+}
+
+/* Clean bottom caption box */
+.sidama-media-caption {
+  padding: 12px 14px !important;
+  background: #ffffff !important;
+  color: var(--primary-color, #0b1f36) !important;
+  font-family: var(--font-body, "Inter", sans-serif) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  border-top: 1px solid var(--border-soft, rgba(11, 31, 54, 0.08)) !important;
+}
+
+/* Centered play button overlay for video cards */
+.sidama-media-play {
+  position: absolute !important;
+  top: calc(50% - 24px) !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 50% !important;
+  background: rgba(11, 31, 54, 0.78) !important;
+  color: #ffffff !important;
+  font-size: 1.1rem !important;
+  cursor: pointer !important;
+  z-index: 2;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidama-media-item:hover .sidama-media-play {
+  background: var(--primary-color, #0b1f36);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+/* =====================================================
+   RESPONSIVE MEDIA QUERIES
+   ===================================================== */
+
+/* Tablets and Medium Screens */
+@media (max-width: 992px) {
+  .sidama-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .sidama-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .sidama-tab-btn {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .sidama-media-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}

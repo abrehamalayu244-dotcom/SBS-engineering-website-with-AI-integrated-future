@@ -19,398 +19,12 @@
 <link rel="stylesheet" href="../css/responsive.css">
 
 <title>SBS Engineering Consultancy | Projects</title>
-
-<style>
-/* =====================================================
-   SBS PROJECT GALLERY — CLEAN MEDIA + WHITE CAPTIONS
-   Place this AFTER the existing gallery CSS.
-   ===================================================== */
-
-/* Clean, consistent gallery cards */
-.sidama-media-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px !important;
-    align-items: start;
-}
-
-.sidama-media-item {
-    position: relative !important;
-    display: block !important;
-    width: 100%;
-    min-width: 0;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-
-    background: #ffffff !important;
-    border: 1px solid #e4e8ed !important;
-    border-radius: 12px !important;
-
-    box-shadow: 0 5px 18px rgba(20, 38, 58, 0.07) !important;
-    transform: none !important;
-    transition: box-shadow 0.2s ease !important;
-}
-
-/* Keep hover subtle: no jumping, zooming, or dramatic effects */
-.sidama-media-item:hover {
-    transform: none !important;
-    box-shadow: 0 8px 24px rgba(20, 38, 58, 0.11) !important;
-}
-
-/* Images and videos occupy the same clean preview area */
-.sidama-media-item > img,
-.sidama-media-item > video {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16 / 10 !important;
-    object-fit: cover !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-
-    opacity: 1 !important;
-    filter: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-
-    background: #edf0f3 !important;
-    transition: none !important;
-}
-
-/* Prevent global hover effects from changing the media */
-.sidama-media-item:hover > img,
-.sidama-media-item:hover > video {
-    opacity: 1 !important;
-    filter: none !important;
-    transform: none !important;
-}
-
-/* =====================================================
-   CAPTION BOX — ALWAYS BELOW THE IMAGE OR VIDEO
-   This overrides old absolute-positioned captions.
-   ===================================================== */
-
-.sidama-media-item > figcaption,
-.sidama-media-item > .sidama-media-caption {
-    position: static !important;
-    inset: auto !important;
-    z-index: auto !important;
-
-    display: -webkit-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    height: 56px !important;
-    min-height: 56px !important;
-    max-height: 56px !important;
-
-    margin: 0 !important;
-    padding: 10px 14px !important;
-
-    overflow: hidden !important;
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    text-overflow: ellipsis !important;
-
-    -webkit-box-orient: vertical !important;
-    -webkit-line-clamp: 2 !important;
-
-    color: #28394b !important;
-    background: #ffffff !important;
-    border: 0 !important;
-    border-top: 1px solid #edf0f3 !important;
-    border-radius: 0 !important;
-
-    font-family: Inter, sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    line-height: 18px !important;
-    text-align: left !important;
-    text-shadow: none !important;
-
-    box-shadow: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-}
-
-/* Remove any old decorative caption overlays */
-.sidama-media-item > figcaption::before,
-.sidama-media-item > figcaption::after,
-.sidama-media-item > .sidama-media-caption::before,
-.sidama-media-item > .sidama-media-caption::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* =====================================================
-   VIDEO PLAY BUTTON — SIMPLE, STATIONARY CIRCLE
-   ===================================================== */
-
-.sidama-media-item > .sidama-media-play {
-    position: absolute !important;
-
-    /* Center within the media area, not within the caption */
-    top: calc(50% - 28px) !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-
-    display: grid !important;
-    place-items: center !important;
-
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
-    min-height: 52px !important;
-    margin: 0 !important;
-    padding: 0 0 0 3px !important;
-
-    color: #ffffff !important;
-    background: rgba(20, 38, 58, 0.78) !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.85) !important;
-    border-radius: 50% !important;
-
-    font-size: 18px !important;
-    line-height: 1 !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    box-shadow: none !important;
-    text-shadow: none !important;
-    filter: none !important;
-
-    transform: translate(-50%, -50%) !important;
-    transition: background 0.18s ease !important;
-}
-
-
-
-
-/* A simple color change — no scaling or movement */
-.sidama-media-item > .sidama-media-play:hover,
-.sidama-media-item:hover > .sidama-media-play {
-    color: #ffffff !important;
-    background: rgba(20, 38, 58, 0.96) !important;
-    transform: translate(-50%, -50%) !important;
-    box-shadow: none !important;
-}
-
-/* Keep keyboard users informed without adding visual clutter */
-.sidama-media-item:focus-visible {
-    outline: 3px solid #316b9b !important;
-    outline-offset: 3px;
-}
-
-/* Responsive gallery */
-@media (max-width: 900px) {
-    .sidama-media-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px !important;
-    }
-}
-
-@media (max-width: 560px) {
-    .sidama-media-grid {
-        grid-template-columns: 1fr;
-        gap: 16px !important;
-    }
-}
-
-
-/* Responsive Grid for Sidama Media Items */
-.sidama-media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    width: 100%;
-}
-
-.sidama-media-item {
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-}
-
-.sidama-media-item img,
-.sidama-media-item video {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Mobile Screens Adjustments */
-@media (max-width: 600px) {
-    .sidama-media-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .sidama-media-item img,
-    .sidama-media-item video {
-        height: 200px;
-    }
-}
-
-/* =====================================================
-   FEATURED PROJECT GRID & CARD RESPONSIVENESS
-   ===================================================== */
-.featured-project-card {
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
-    border-radius: 12px;
-}
-
-.featured-project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-}
-
-.featured-project-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.featured-project-item strong {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #666;
-}
-
-.featured-project-item span {
-    font-size: 0.95rem;
-    color: #222;
-    line-height: 1.4;
-}
-
-/* =====================================================
-   SIDAMA MEDIA GRID & GALLERY RESPONSIVENESS
-   ===================================================== */
-.sidama-part {
-    margin-bottom: 2.5rem;
-}
-
-.sidama-media-label {
-    font-size: 1.25rem;
-    margin: 1.5rem 0 1rem;
-    color: #111;
-}
-
-.sidama-media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    width: 100%;
-}
-
-.sidama-media-item {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #f2f4f7;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Maintain unified 16:9 aspect ratio across all images and videos */
-.sidama-media-item img,
-.sidama-media-item video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-}
-
-/* Play button placement for video items */
-.sidama-media-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.65);
-    color: #fff;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    z-index: 2;
-}
-
-.sidama-media-play:hover {
-    background: rgba(0, 0, 0, 0.85);
-    transform: translate(-50%, -50%) scale(1.08);
-}
-
-.sidama-media-caption {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.85rem;
-    color: #555;
-    background-color: #fff;
-}
-
-/* =====================================================
-   MEDIA QUERIES FOR TABLET & MOBILE DEVICES
-   ===================================================== */
-
-/* Tablet Viewports (Below 992px) */
-@media (max-width: 992px) {
-    .sidama-media-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-}
-
-/* Mobile Viewports (Below 600px) */
-@media (max-width: 600px) {
-    .featured-project-card {
-        padding: 1rem;
-    }
-
-    .featured-project-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .sidama-media-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .sidama-media-play {
-        width: 42px;
-        height: 42px;
-        font-size: 1rem;
-    }
-}
-</style>
 </head>
 
 <body>
 
 <header>
-
 <nav class="navbar container">
-
 <a href="../index.html" class="logo" aria-label="SBS Engineering Consultancy home">
     <img src="../assets/logos/sbs-logo.png" alt="SBS Engineering Consultancy Logo">
 </a>
@@ -428,17 +42,12 @@
 </ul>
 
 <a href="contact.html" class="btn btn-primary btn-arrow">Get Consultation</a>
-
 </nav>
-
 </header>
 
 <main>
 
-<!-- =========================================================
-     HERO
-     ========================================================= -->
-
+<!-- HERO -->
 <section class="page-hero reveal">
     <div class="container">
         <span class="section-tag">Project Experience</span>
@@ -451,10 +60,7 @@
     </div>
 </section>
 
-<!-- =========================================================
-     INTRODUCTION
-     ========================================================= -->
-
+<!-- INTRODUCTION -->
 <section class="project-intro reveal">
     <div class="container">
         <div class="section-title">
@@ -470,18 +76,13 @@
     </div>
 </section>
 
-<!-- =========================================================
-     PROJECT GRID
-     ========================================================= -->
-
+<!-- PROJECT GRID -->
 <section class="projects-section reveal">
     <div class="container">
         <div class="projects-grid">
 
             <article class="project-card card">
-                <img src="../assets/images/projects/UNISA-GELAN-BISHOFTU.jpg"
-                     alt="UNISA – Gelan – Bishoftu Road Project"
-                     loading="lazy">
+                <img src="../assets/images/projects/UNISA-GELAN-BISHOFTU.jpg" alt="UNISA – Gelan – Bishoftu Road Project" loading="lazy">
                 <div class="project-content">
                     <span>Road Infrastructure</span>
                     <h3>UNISA – Gelan – Bishoftu Road Project</h3>
@@ -501,7 +102,7 @@
                         data-title="UNISA – Gelan – Bishoftu Road Project"
                         data-description="A road infrastructure assignment recorded in the SBS project portfolio."
                         data-list="Road infrastructure assignment|UNISA – Gelan – Bishoftu corridor|Listed in the SBS project portfolio"
-                        data-long="The UNISA – Gelan – Bishoftu Road Project is recorded in the SBS Engineering Consultancy portfolio as part of the firm's road infrastructure experience. Road projects of this type require coordinated attention to route alignment, geotechnical conditions, drainage, pavement design and interfaces with surrounding development. SBS presents this assignment according to the project information recorded in its professional portfolio."
+                        data-long="The UNISA – Gelan – Bishoftu Road Project is recorded in the SBS Engineering Consultancy portfolio as part of the firm's road infrastructure experience."
                         data-images="../assets/images/projects/UNISA-GELAN-BISHOFTU.jpg">
                         See Details
                     </button>
@@ -509,9 +110,7 @@
             </article>
 
             <article class="project-card card">
-                <img src="../assets/images/projects/HARAR-CORIDOR-DEVELOPMENT.jpg"
-                     alt="Harar Corridor Development"
-                     loading="lazy">
+                <img src="../assets/images/projects/HARAR-CORIDOR-DEVELOPMENT.jpg" alt="Harar Corridor Development" loading="lazy">
                 <div class="project-content">
                     <span>Urban Infrastructure</span>
                     <h3>Harar Corridor Development</h3>
@@ -529,7 +128,7 @@
                         data-title="Harar Corridor Development"
                         data-description="A corridor development assignment recorded in the SBS project portfolio."
                         data-list="Urban corridor development|Harar, Ethiopia|Urban infrastructure context"
-                        data-long="The Harar Corridor Development is included in the SBS project portfolio as an urban infrastructure assignment. Corridor development can involve improvements to accessibility, streets, public spaces and the quality of the urban environment while respecting the identity of the city. SBS presents the project according to its available project records."
+                        data-long="The Harar Corridor Development is included in the SBS project portfolio as an urban infrastructure assignment."
                         data-images="../assets/images/projects/HARAR-CORIDOR-DEVELOPMENT.jpg">
                         See Details
                     </button>
@@ -537,9 +136,7 @@
             </article>
 
             <article class="project-card card">
-                <img src="../assets/images/projects/GUMIGAYO-REAL-STATE.jpg"
-                     alt="Gumigayo Real-Estate Compound Access Roads"
-                     loading="lazy">
+                <img src="../assets/images/projects/GUMIGAYO-REAL-STATE.jpg" alt="Gumigayo Real-Estate Compound Access Roads" loading="lazy">
                 <div class="project-content">
                     <span>Access Roads</span>
                     <h3>Gumigayo Real-Estate Compound Access Roads</h3>
@@ -558,7 +155,7 @@
                         data-title="Gumigayo Real-Estate Compound Access Roads"
                         data-description="An access-road assignment covering survey, materials investigation, design and tender documentation."
                         data-list="Route survey|Materials investigation|Detailed engineering design|Tender documentation"
-                        data-long="The recorded SBS scope for the Gumigayo Real-Estate Compound Access Roads includes route survey, materials investigation, detailed engineering design and tender documentation. These activities provide technical information and design documentation for an access-road solution."
+                        data-long="The recorded SBS scope for the Gumigayo Real-Estate Compound Access Roads includes route survey, materials investigation, detailed engineering design and tender documentation."
                         data-images="../assets/images/projects/GUMIGAYO-REAL-STATE.jpg">
                         See Details
                     </button>
@@ -566,9 +163,7 @@
             </article>
 
             <article class="project-card card">
-                <img src="../assets/images/projects/OVID-GATED-COMMUNITY.jpg"
-                     alt="Ovid Gated Community Access Road"
-                     loading="lazy">
+                <img src="../assets/images/projects/OVID-GATED-COMMUNITY.jpg" alt="Ovid Gated Community Access Road" loading="lazy">
                 <div class="project-content">
                     <span>Access Road</span>
                     <h3>Ovid Gated Community Access Road</h3>
@@ -586,7 +181,7 @@
                         data-title="Ovid Gated Community Access Road"
                         data-description="An engineering assignment focused on the design and tender documentation of an access road."
                         data-list="Access-road development|Detailed engineering design|Tender documentation"
-                        data-long="The Ovid Gated Community Access Road is recorded in the SBS project portfolio with a scope focused on detailed engineering design and tender documentation. The work is presented according to the available SBS project record."
+                        data-long="The Ovid Gated Community Access Road is recorded in the SBS project portfolio with a scope focused on detailed engineering design and tender documentation."
                         data-images="../assets/images/projects/OVID-GATED-COMMUNITY.jpg">
                         See Details
                     </button>
@@ -594,9 +189,7 @@
             </article>
 
             <article class="project-card card">
-                <img src="../assets/images/projects/OVID-CHAKA-EXPANSION-PROJECT.jpg"
-                     alt="Ovid Chaka Expansion Project"
-                     loading="lazy">
+                <img src="../assets/images/projects/OVID-CHAKA-EXPANSION-PROJECT.jpg" alt="Ovid Chaka Expansion Project" loading="lazy">
                 <div class="project-content">
                     <span>Urban Development</span>
                     <h3>Ovid Chaka Expansion Project</h3>
@@ -614,19 +207,15 @@
                         data-title="Ovid Chaka Expansion Project"
                         data-description="An urban development assignment recorded in the SBS project portfolio."
                         data-list="Urban development|Engineering design|Tender documentation"
-                        data-long="The Ovid Chaka Expansion Project is included in the SBS Engineering Consultancy project portfolio. The documented engineering scope is presented here without adding unverified contract values or responsibilities."
+                        data-long="The Ovid Chaka Expansion Project is included in the SBS Engineering Consultancy project portfolio."
                         data-images="../assets/images/projects/OVID-CHAKA-EXPANSION-PROJECT.jpg">
                         See Details
                     </button>
                 </div>
             </article>
 
-            
-
             <article class="project-card card">
-                <img src="../assets/images/projects/ARBAMINCH-KULFO-RIVER.jpg"
-                     alt="Arbaminch – Kulfo Riverside Development"
-                     loading="lazy">
+                <img src="../assets/images/projects/ARBAMINCH-KULFO-RIVER.jpg" alt="Arbaminch – Kulfo Riverside Development" loading="lazy">
                 <div class="project-content">
                     <span>Riverside Development</span>
                     <h3>Arbaminch – Kulfo Riverside Development</h3>
@@ -644,7 +233,7 @@
                         data-title="Arbaminch – Kulfo Riverside Development"
                         data-description="An urban development assignment recorded in the SBS project portfolio."
                         data-list="Riverside development|Arba Minch, Ethiopia|Urban infrastructure context"
-                        data-long="Riverside development can bring together engineering, urban planning, movement, public space and environmental considerations. The Arbaminch – Kulfo Riverside Development is recorded in the SBS project portfolio as part of its urban development experience."
+                        data-long="Riverside development can bring together engineering, urban planning, movement, public space and environmental considerations."
                         data-images="../assets/images/projects/ARBAMINCH-KULFO-RIVER.jpg">
                         See Details
                     </button>
@@ -652,9 +241,7 @@
             </article>
 
             <article class="project-card card">
-                <img src="../assets/images/projects/ARBAMINCH-GAMO-TO-KONSO.jpg"
-                     alt="Arbaminch Gamo – Konso Square Corridor Development"
-                     loading="lazy">
+                <img src="../assets/images/projects/ARBAMINCH-GAMO-TO-KONSO.jpg" alt="Arbaminch Gamo – Konso Square Corridor Development" loading="lazy">
                 <div class="project-content">
                     <span>Urban Corridor</span>
                     <h3>Arbaminch (Gamo) – Konso Square Corridor Development</h3>
@@ -672,23 +259,18 @@
                         data-title="Arbaminch (Gamo) – Konso Square Corridor Development"
                         data-description="A corridor-development assignment recorded in the SBS project portfolio."
                         data-list="Urban corridor development|Arba Minch, Ethiopia|Gamo Square context|Konso Roundabout context"
-                        data-long="The Arbaminch (Gamo) – Konso Square Corridor Development is included in the SBS project portfolio as an urban corridor assignment. Corridor development can involve surveying, understanding existing infrastructure, considering traffic patterns and coordinating urban improvements."
+                        data-long="The Arbaminch (Gamo) – Konso Square Corridor Development is included in the SBS project portfolio as an urban corridor assignment."
                         data-images="../assets/images/projects/ARBAMINCH-GAMO-TO-KONSO.jpg">
                         See Details
                     </button>
                 </div>
             </article>
 
-          
-
         </div>
     </div>
 </section>
 
-<!-- =========================================================
-     FEATURED SIDAMA PROJECT
-     ========================================================= -->
-
+<!-- FEATURED SIDAMA PROJECT -->
 <section class="reveal featured-sidama">
     <div class="container">
 
@@ -834,6 +416,7 @@
             </p>
         </div>
 
+        <!-- PROJECT GALLERY WITH TABS -->
         <div class="sidama-part" id="sidama-gallery">
             <div class="sidama-part-head">
                 <span class="sidama-part-number">07</span>
@@ -843,114 +426,116 @@
                 </div>
             </div>
 
-            <h4 class="sidama-media-label">Project Videos</h4>
-
-            <div class="sidama-media-grid">
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
-                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4" data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
-                </figure>
+            <!-- Gallery Filter Tabs -->
+            <div class="sidama-tabs" role="tablist" aria-label="Project Media Filter">
+                <button type="button" class="sidama-tab-btn active" data-filter="all" role="tab" aria-selected="true">All Media</button>
+                <button type="button" class="sidama-tab-btn" data-filter="videos" role="tab" aria-selected="false">Videos</button>
+                <button type="button" class="sidama-tab-btn" data-filter="photos" role="tab" aria-selected="false">Photographs</button>
             </div>
 
-            <h4 class="sidama-media-label">Project Photographs</h4>
-
+            <!-- Unified Media Grid -->
             <div class="sidama-media-grid">
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+
+                <!-- VIDEOS -->
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4" data-media-title="Sidama Package 2 — Project Video 1">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 1</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4" data-media-title="Sidama Package 2 — Project Video 2">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 2</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4" data-media-title="Sidama Package 2 — Project Video 3">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 3</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4" data-media-title="Sidama Package 2 — Project Video 4">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 4</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4" data-media-title="Sidama Package 2 — Project Video 5">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 5</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4" data-media-title="Sidama Package 2 — Project Video 6">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 6</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="videos" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4" data-media-title="Sidama Package 2 — Project Video 7">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play video">▶</button>
+                    <figcaption class="sidama-media-caption">Project Video 7</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+
+                <!-- PHOTOGRAPHS -->
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg" data-media-title="Sidama Package 2 — Project Photograph 1">
+                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg" alt="Sidama Package 2 project photograph 1" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 1</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" data-media-title="Sidama Package 2 — Project Photograph 2">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" alt="Sidama Package 2 project photograph 2" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 2</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" data-media-title="Sidama Package 2 — Project Photograph 3">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" alt="Sidama Package 2 project photograph 3" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 3</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" data-media-title="Sidama Package 2 — Project Photograph 4">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" alt="Sidama Package 2 project photograph 4" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 4</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" data-media-title="Sidama Package 2 — Project Photograph 5">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" alt="Sidama Package 2 project photograph 5" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 5</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" data-media-title="Sidama Package 2 — Project Photograph 6">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" alt="Sidama Package 2 project photograph 6" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 6</figcaption>
                 </figure>
-                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" data-media-title="Sidama Package 2 — Project Photograph 7">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" alt="Sidama Package 2 project photograph 7" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 7</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" data-media-title="Sidama Package 2 — Project Photograph 8">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" alt="Sidama Package 2 project photograph 8" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 8</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" data-media-title="Sidama Package 2 — Project Photograph 9">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" alt="Sidama Package 2 project photograph 9" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 9</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" data-media-title="Sidama Package 2 — Project Photograph 10">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" alt="Sidama Package 2 project photograph 10" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 10</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" data-media-title="Sidama Package 2 — Project Photograph 11">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" alt="Sidama Package 2 project photograph 11" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 11</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" data-media-title="Sidama Package 2 — Project Photograph 12">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" alt="Sidama Package 2 project photograph 12" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 12</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" data-media-title="Sidama Package 2 — Project Photograph 13">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" alt="Sidama Package 2 project photograph 13" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 13</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-category="photos" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" data-media-title="Sidama Package 2 — Project Photograph 14">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" alt="Sidama Package 2 project photograph 14" loading="lazy">
+                    <figcaption class="sidama-media-caption">Project Photograph 14</figcaption>
                 </figure>
             </div>
         </div>
     </div>
 </section>
 
-<!-- =========================================================
-     CALL TO ACTION
-     ========================================================= -->
-
+<!-- CALL TO ACTION -->
 <section class="cta reveal">
     <div class="container">
         <div class="cta-box">
@@ -965,41 +550,26 @@
 
 </main>
 
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
 <footer>
     <div class="container footer-container">
-
         <div class="footer-about">
             <img src="../assets/logos/sbs-buttom-logo.png" alt="SBS Logo">
             <p>Engineering solutions focused on quality, reliability, and long-term value.</p>
-
             <div class="footer-socials" aria-label="Social media">
                 <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/></svg>
                 </a>
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/></svg>
                 </a>
                 <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.2-1.6-4.4-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.4-.1-.6-.1-.2-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.6 0-.9.4-1.2.8-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.3 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.3-.6-.3z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.2-1.6-4.4-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.4-.1-.6-.1-.2-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.6 0-.9.4-1.2.8-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.3 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.3-.6-.3z"/></svg>
                 </a>
                 <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/></svg>
                 </a>
             </div>
         </div>
-
         <div>
             <h3>Company</h3>
             <ul>
@@ -1008,7 +578,6 @@
                 <li><a href="services.html">Services</a></li>
             </ul>
         </div>
-
         <div>
             <h3>Explore</h3>
             <ul>
@@ -1017,7 +586,6 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
-
         <div>
             <h3>Contact</h3>
             <ul>
@@ -1026,9 +594,7 @@
                 <li><a href="mailto:sbsengineeringconsultancy@gmail.com">sbsengineeringconsultancy@gmail.com</a></li>
             </ul>
         </div>
-
     </div>
-
     <div class="copyright">
         <div class="container">
             <p>© 2026 SBS Engineering Consultancy. All Rights Reserved.</p>
@@ -1038,10 +604,7 @@
 
 <button id="scrollTop" type="button" aria-label="Back to top">↑</button>
 
-<!-- =========================================================
-     PROJECT DETAIL MODAL
-     ========================================================= -->
-
+<!-- PROJECT DETAIL MODAL -->
 <div class="detail-modal" id="detailModal" aria-hidden="true">
     <div class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
         <button class="detail-close" type="button" data-modal-close aria-label="Close details">×</button>
@@ -1051,10 +614,7 @@
     </div>
 </div>
 
-<!-- =========================================================
-     SIDAMA MEDIA LIGHTBOX
-     ========================================================= -->
-
+<!-- SIDAMA MEDIA LIGHTBOX -->
 <div class="sidama-lightbox" id="sidamaLightbox" aria-hidden="true">
     <div class="sidama-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="sidamaLightboxTitle">
         <button class="sidama-lightbox-close" type="button" data-lb-close aria-label="Close">×</button>
@@ -1069,10 +629,7 @@
 <script src="../js/ai-widget.js"></script>
 
 <script>
-/* =========================================================
-   PROJECT DETAIL MODAL
-   ========================================================= */
-
+/* PROJECT DETAIL MODAL SCRIPT */
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("detailModal");
     const kicker = modal.querySelector("[data-modal-kicker]");
@@ -1099,105 +656,84 @@ document.addEventListener("DOMContentLoaded", () => {
         title.textContent = titleText;
 
         let html = "";
-
         if (images.length) {
             html += '<div class="detail-gallery">';
             images.forEach((src, index) => {
-                html += `<img src="${escapeHTML(src)}"
-                              alt="${escapeHTML(titleText)} — view ${index + 1}"
-                              loading="lazy">`;
+                html += `<img src="${escapeHTML(src)}" alt="${escapeHTML(titleText)} — view ${index + 1}" loading="lazy">`;
             });
             html += "</div>";
         }
-
         if (description) {
             html += `<p class="detail-lead">${escapeHTML(description)}</p>`;
         }
-
         if (longText) {
-            html += `
-                <div class="detail-section">
-                    <h3>Project Description</h3>
-                    <p>${escapeHTML(longText)}</p>
-                </div>`;
+            html += `<div class="detail-section"><h3>Project Description</h3><p>${escapeHTML(longText)}</p></div>`;
         }
-
         if (listItems.length) {
-            html += `
-                <div class="detail-section">
-                    <h3>Key Facts</h3>
-                    <ul>
-                        ${listItems.map(item => `<li>${escapeHTML(item.trim())}</li>`).join("")}
-                    </ul>
-                </div>`;
+            html += `<div class="detail-section"><h3>Key Facts</h3><ul>${listItems.map(item => `<li>${escapeHTML(item.trim())}</li>`).join("")}</ul></div>`;
         }
-
-        html += `
-            <div class="detail-section detail-role-note">
-                <h3>Important Portfolio Note</h3>
-                <p>
-                    Project information is presented according to the
-                    available SBS portfolio. Specific responsibilities
-                    should be confirmed against the relevant project records.
-                </p>
-            </div>
-            <div class="detail-section">
-                <h3>Need Similar Engineering Support?</h3>
-                <p>
-                    Contact SBS Engineering Consultancy to discuss your
-                    project's technical requirements and scope.
-                </p>
-                <a href="contact.html" class="btn btn-primary btn-arrow">
-                    Request Consultation
-                </a>
-            </div>`;
-
+        html += `<div class="detail-section detail-role-note"><h3>Important Portfolio Note</h3><p>Project information is presented according to the available SBS portfolio.</p></div>`;
         body.innerHTML = html;
     }
 
     function openModal(button) {
         renderDetail(button);
-        modal.classList.add("active");
+        modal.classList.add("open");
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
         closeButton.focus();
     }
 
     function closeModal() {
-        modal.classList.remove("active");
+        modal.classList.remove("open");
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
     }
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => openModal(button));
-    });
-
+    buttons.forEach(button => button.addEventListener("click", () => openModal(button)));
     closeButton.addEventListener("click", closeModal);
-
-    modal.addEventListener("click", event => {
-        if (event.target === modal) closeModal();
-    });
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
-        }
-    });
+    modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && modal.classList.contains("open")) closeModal(); });
 });
 
-/* =========================================================
-   IMAGE AND VIDEO LIGHTBOX
-   ========================================================= */
-
+/* MEDIA LIGHTBOX & TAB FILTER SCRIPT */
 document.addEventListener("DOMContentLoaded", () => {
+    // Gallery Tab Filter Logic
+    const tabButtons = document.querySelectorAll(".sidama-tab-btn");
+    const mediaItems = document.querySelectorAll(".sidama-media-item");
+
+    if (tabButtons.length && mediaItems.length) {
+        tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                    btn.setAttribute("aria-selected", "false");
+                });
+
+                button.classList.add("active");
+                button.setAttribute("aria-selected", "true");
+
+                const filter = button.dataset.filter;
+
+                mediaItems.forEach(item => {
+                    const category = item.dataset.category;
+                    if (filter === "all" || category === filter) {
+                        item.classList.remove("hidden");
+                    } else {
+                        item.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    }
+
+    // Lightbox Modal Logic
     const lightbox = document.getElementById("sidamaLightbox");
     if (!lightbox) return;
 
     const lightboxTitle = lightbox.querySelector(".sidama-lightbox-title");
     const lightboxContent = lightbox.querySelector("[data-lb-content]");
     const closeButton = lightbox.querySelector("[data-lb-close]");
-    const mediaItems = [...document.querySelectorAll(".sidama-media-item")];
 
     function openLightbox(item) {
         const type = item.dataset.mediaType;
@@ -1205,16 +741,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = item.dataset.mediaTitle || "Sidama Package 2 Project Gallery";
 
         lightboxTitle.textContent = title;
-
         if (type === "video") {
-            lightboxContent.innerHTML = `
-                <video controls autoplay playsinline preload="metadata">
-                    <source src="${source}" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>`;
+            lightboxContent.innerHTML = `<video controls autoplay playsinline preload="metadata"><source src="${source}" type="video/mp4"></video>`;
         } else {
-            lightboxContent.innerHTML = `
-                <img src="${source}" alt="Sidama Package 2 project photograph">`;
+            lightboxContent.innerHTML = `<img src="${source}" alt="Sidama Package 2 project photograph">`;
         }
 
         lightbox.classList.add("open");
@@ -1233,31 +763,13 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaItems.forEach(item => {
         item.setAttribute("role", "button");
         item.setAttribute("tabindex", "0");
-
-        item.addEventListener("click", event => {
-            event.preventDefault();
-            openLightbox(item);
-        });
-
-        item.addEventListener("keydown", event => {
-            if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                openLightbox(item);
-            }
-        });
+        item.addEventListener("click", event => { event.preventDefault(); openLightbox(item); });
+        item.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openLightbox(item); } });
     });
 
     closeButton.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", event => {
-        if (event.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && lightbox.classList.contains("open")) {
-            closeLightbox();
-        }
-    });
+    lightbox.addEventListener("click", event => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox(); });
 });
 </script>
 
