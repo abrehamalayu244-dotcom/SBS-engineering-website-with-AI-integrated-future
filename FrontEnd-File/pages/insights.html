@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SBS Engineering Consultancy provides engineering, architectural, infrastructure, and construction-related solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logos/sbs-logo.png">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+<title>SBS Engineering Consultancy | Insights</title>
+
+<style>
+/* =========================================================
+   INSIGHT DETAIL MODAL — readable text fix
+   Overrides style.css (white-space:pre-line, tight padding)
+   so the modal displays properly. Uses high specificity
+   (#detailModal) so it wins over any conflicting rule.
+   ========================================================= */
+
+#detailModal .detail-dialog {
+    max-width: 860px;
+    width: min(860px, 92vw);
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 42px 46px;
+    background: #ffffff;
+    border-radius: 18px;
+}
+
+#detailModal .detail-body {
+    white-space: normal !important;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #404952;
+}
+
+#detailModal .detail-body p {
+    margin: 0 0 18px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #404952;
+}
+
+#detailModal .detail-body h3 {
+    margin: 24px 0 10px;
+    font-size: 1.05rem;
+    color: #17202a;
+}
+
+#detailModal .detail-kicker {
+    color: #c49a3d;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#detailModal .detail-dialog h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin: 0 0 22px;
+    padding-right: 55px;
+    color: #17202a;
+}
+
+#detailModal .detail-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #f1f3f5;
+    color: #17202a;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#detailModal .detail-close:hover {
+    background: #17202a;
+    color: #ffffff;
+}
+
+@media (max-width: 700px) {
+    #detailModal .detail-dialog {
+        padding: 26px 20px;
+        max-height: 92vh;
+    }
+    #detailModal .detail-dialog h2 {
+        font-size: 1.25rem;
+        padding-right: 48px;
+    }
+    #detailModal .detail-body,
+    #detailModal .detail-body p {
+        font-size: 0.95rem;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav class="navbar container">
+    <a href="../index.html" class="logo" aria-label="SBS Engineering Consultancy home">
+      <img src="../assets/logos/sbs-logo.png" alt="SBS Engineering Consultancy Logo">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a class="active" href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ai.html">✦ SBS AI</a></li>
+    </ul>
+
+    <a href="contact.html" class="btn btn-primary btn-arrow">Get Consultation</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero reveal">
+  <div class="container">
+    <span class="section-tag">Insights</span>
+    <h1>Engineering Knowledge</h1>
+    <p>Practical topics connected to roads, infrastructure, design and responsible project delivery.</p>
+  </div>
+</section>
+
+<section class="home-insights section reveal">
+  <div class="container">
+
+    <div class="section-heading">
+      <div>
+        <span class="section-tag">Knowledge</span>
+        <h2>Ideas for Better Engineering Decisions</h2>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ROW 1 — Original three insights (kept exactly as they were)
+         ============================================================ -->
+    <div class="insights-featured-grid">
+
+      <article class="insight-featured insight-large">
+        <div class="insight-image"><img src="../assets/images/insight1.jpg" alt="Engineering planning and design" loading="lazy"><span>Infrastructure</span></div>
+        <div class="insight-content">
+          <div class="insight-meta">Engineering · Educational</div>
+          <h3>Starting a Highway Project: What Should Be Considered?</h3>
+          <p>Early route selection, survey, feasibility, environmental and social considerations shape the quality of later engineering decisions.</p>
+          <button type="button" class="btn btn-arrow"
+            data-detail
+            data-kicker="Infrastructure Planning • Insight"
+            data-title="Starting a Highway Project: What Should Be Considered?"
+            data-description="Early route selection, survey, feasibility, environmental and social considerations shape the quality of later engineering decisions."
+            data-long="A successful highway project begins long before construction. Early decisions establish the technical, environmental and economic framework that influences cost, safety, durability and long-term operation. First, understand the transport need: define the problem, expected users, connections and desired outcomes. Second, investigate the corridor: review terrain, settlements, existing roads, utilities, drainage and environmental constraints. Third, compare alternatives: route and design options should be assessed against safety, constructability, cost and social impact. Fourth, build reliable engineering information: survey, geotechnical, hydrological and traffic data reduce uncertainty during detailed design. Finally, plan implementation: clear drawings, specifications, quantities, procurement documents and supervision arrangements help convert design intent into quality construction.">
+            Read Insight
+          </button>
+        </div>
+      </article>
+
+      <div class="insight-side-column">
+
+        <article class="insight-small">
+          <div class="insight-small-number">01</div>
+          <div>
+            <span>Structures</span>
+            <h3>Why Structural Engineering Matters</h3>
+            <p>Safe, efficient structural solutions depend on sound engineering analysis and coordination.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Structures • Insight 01"
+              data-title="Why Structural Engineering Matters"
+              data-description="Safe, efficient structural solutions depend on sound engineering analysis and coordination."
+              data-long="Structural engineering protects people and property by ensuring that buildings and infrastructure can safely resist the loads and conditions they are expected to experience. Engineering analysis considers loads, materials, foundations, geometry and the way individual elements work together as a complete system. Good structural design balances safety, serviceability, durability, constructability and efficient use of materials rather than focusing on strength alone. Coordination is essential: structural decisions must work with architectural requirements, utilities, construction methods and the realities of the project site. Professional review and quality control during construction are equally important because a good design must be implemented correctly to achieve its intended performance.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+        <article class="insight-small">
+          <div class="insight-small-number">02</div>
+          <div>
+            <span>Construction</span>
+            <h3>The Role of Construction Supervision</h3>
+            <p>Quality control, technical compliance and communication help turn design intent into built work.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Construction • Insight 02"
+              data-title="The Role of Construction Supervision"
+              data-description="Quality control, technical compliance and communication help turn design intent into built work."
+              data-long="Construction supervision is the bridge between design intent and the completed asset. It provides structured technical oversight during implementation, helping to ensure that materials, workmanship and installation methods comply with drawings and specifications. Effective supervision combines site inspection, materials verification, progress documentation and clear communication between the client, the contractor and the designer. It also supports contract administration: recording site conditions, managing variations and providing a factual record that protects all parties. Good supervision is not about replacing the contractor's responsibility but about adding a layer of independent technical assurance so that the built asset performs as intended.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+        <article class="insight-small">
+          <div class="insight-small-number">03</div>
+          <div>
+            <span>Survey</span>
+            <h3>Why Accurate Topographic Survey Matters</h3>
+            <p>Reliable field information provides the foundation for route selection, geometric design and quantity decisions.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Survey &amp; Design • Insight 03"
+              data-title="Why Accurate Topographic Survey Matters"
+              data-description="Reliable field information provides the foundation for route selection, geometric design and quantity decisions."
+              data-long="Topographic survey is one of the most important starting points for infrastructure design because engineering decisions depend on an accurate understanding of the site. Reliable coordinates and levels support route selection, horizontal and vertical geometry, drainage design, earthworks calculations and the positioning of structures. Incomplete or inaccurate field information can create redesign, quantity changes and construction difficulties. Investing in appropriate survey work early can therefore reduce uncertainty later. Survey information should be managed carefully and coordinated with other investigations so designers are working from a consistent representation of existing conditions. For roads and urban infrastructure, good topographic data also helps identify interfaces with buildings, utilities, watercourses and access requirements before detailed decisions are finalized.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ROW 2 — Three insights (from previous message)
+         ============================================================ -->
+    <div class="insights-featured-grid" style="margin-top:32px">
+
+      <article class="insight-featured insight-large">
+        <div class="insight-image"><img src="../assets/images/insight2.jpg" alt="Pavement engineering and materials testing" loading="lazy"><span>Pavement</span></div>
+        <div class="insight-content">
+          <div class="insight-meta">Engineering · Materials</div>
+          <h3>Pavement Design: Building Roads That Last</h3>
+          <p>Durable pavements depend on accurate subgrade evaluation, appropriate material selection and coordinated drainage design.</p>
+          <button type="button" class="btn btn-arrow"
+            data-detail
+            data-kicker="Pavement Engineering • Insight 04"
+            data-title="Pavement Design: Building Roads That Last"
+            data-description="Durable pavements depend on accurate subgrade evaluation, appropriate material selection and coordinated drainage design."
+            data-long="A pavement is a layered structural system that must carry traffic loads, distribute stress to the underlying subgrade and remain serviceable throughout its design life. Its long-term performance depends on decisions made during investigation, design and construction. First, evaluate the subgrade: soil strength, moisture conditions and seasonal variation influence the thickness and composition of the pavement layers above. Second, select appropriate materials: aggregate quality, gradation and binder properties determine how well each layer resists deformation and fatigue. Third, coordinate drainage: pavements perform best when surface and subsurface water is managed away from the structure, avoiding softening and pumping. Fourth, balance cost and durability: pavement options should be compared on life-cycle performance, not initial cost alone. Finally, monitor construction: correct compaction, layer thickness and material compliance are essential to achieving the intended design performance.">
+            Read Insight
+          </button>
+        </div>
+      </article>
+
+      <div class="insight-side-column">
+
+        <article class="insight-small">
+          <div class="insight-small-number">04</div>
+          <div>
+            <span>Hydrology</span>
+            <h3>Drainage Design for Road Infrastructure</h3>
+            <p>Effective drainage protects pavements, structures and adjacent land from the effects of uncontrolled runoff.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Hydrology &amp; Hydraulics • Insight 04"
+              data-title="Drainage Design for Road Infrastructure"
+              data-description="Effective drainage protects pavements, structures and adjacent land from the effects of uncontrolled runoff."
+              data-long="Water is one of the most common causes of road deterioration. Effective drainage design protects pavements, embankments, bridges and adjacent land from the effects of uncontrolled runoff. Understanding the catchment means assessing rainfall intensity, terrain, soil permeability and the way water naturally moves across and through the project area. Roadside drains, culverts, fords and channels must be sized for the design storm and coordinated so that one element does not overload another downstream. Erosion protection is essential where flow velocities are high, particularly at outlets, embankments and areas of disturbed ground. Maintenance considerations should be built into the design from the outset, since even well-designed drainage will underperform if it cannot be inspected and cleaned over time.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+        <article class="insight-small">
+          <div class="insight-small-number">05</div>
+          <div>
+            <span>Contract</span>
+            <h3>Tender Documents: Why Clarity Matters</h3>
+            <p>Consistent drawings, specifications and quantities reduce bidder uncertainty, claims and disputes.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Procurement &amp; Contracts • Insight 05"
+              data-title="Tender Documents: Why Clarity Matters"
+              data-description="Consistent drawings, specifications and quantities reduce bidder uncertainty, claims and disputes."
+              data-long="Tender documents translate an engineering design into information that bidders can price and construct. When they are clear, complete and consistent, projects start from a stronger position. Drawings should match the specifications, and both should align with the bill of quantities so that bidders are working from the same project definition. Complete information reduces the number of assumptions bidders must make, which in turn reduces risk pricing and the likelihood of post-award variations. Technical specifications should describe the required quality and performance without ambiguity, leaving no room for conflicting interpretations. A well-prepared tender package also supports contract administration later, because the same documents that guided procurement provide the basis for measuring and managing the work.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+        <article class="insight-small">
+          <div class="insight-small-number">06</div>
+          <div>
+            <span>Geotechnical</span>
+            <h3>Understanding Subsurface Conditions</h3>
+            <p>Geotechnical investigation gives engineers the information they need to make sound foundation and earthwork decisions.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Geotechnical Engineering • Insight 06"
+              data-title="Understanding Subsurface Conditions"
+              data-description="Geotechnical investigation gives engineers the information they need to make sound foundation and earthwork decisions."
+              data-long="Geotechnical investigation provides the information engineers need to understand how ground conditions will affect foundations, earthworks, pavements and structures. The scope of investigation should match the project type, expected loads and the variability of the site, combining boreholes, test pits, sampling and in-situ testing as appropriate. Laboratory testing characterizes soil and rock behaviour, informing parameters used in settlement, bearing capacity, slope stability and pavement design. Ground conditions are rarely uniform. Interpreting investigation results requires judgement, and the design must account for realistic variability rather than a single average profile. Clear geotechnical reporting links field and laboratory evidence to design recommendations, giving the wider project team a reliable basis for decision-making.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ROW 3 — Two NEW insights (added in this update)
+         ============================================================ -->
+    <div class="insights-featured-grid" style="margin-top:32px">
+
+      <article class="insight-featured insight-large">
+        <div class="insight-image"><img src="../assets/images/insight3.jpg" alt="Environmental and social impact assessment" loading="lazy"><span>Environment</span></div>
+        <div class="insight-content">
+          <div class="insight-meta">Environment · Social</div>
+          <h3>Environmental &amp; Social Assessment in Infrastructure</h3>
+          <p>Early identification of environmental and social impacts helps projects proceed with fewer delays and stronger community outcomes.</p>
+          <button type="button" class="btn btn-arrow"
+            data-detail
+            data-kicker="Environmental &amp; Social • Insight 07"
+            data-title="Environmental &amp; Social Assessment in Infrastructure"
+            data-description="Early identification of environmental and social impacts helps projects proceed with fewer delays and stronger community outcomes."
+            data-long="Infrastructure projects interact with the environment and with the communities around them. An Environmental and Social Impact Assessment (ESIA) provides a structured way to understand those interactions before construction begins. The process starts with screening and scoping: identifying which environmental, social, health and safety issues are relevant to the project and where further study is needed. Baseline studies then document existing conditions, including air, water, soil, biodiversity, land use, livelihoods and cultural heritage. Impact prediction considers how the project may change those conditions during construction and operation. Mitigation planning sets out measures to avoid, reduce or compensate for adverse effects, and a monitoring framework ensures those measures are actually applied. Where land acquisition or displacement is involved, a Resettlement Action Plan (RAP) complements the ESIA by addressing livelihood restoration and compensation. Together, these tools help projects meet regulatory requirements, manage risk and build community trust.">
+            Read Insight
+          </button>
+        </div>
+      </article>
+
+      <div class="insight-side-column">
+
+        <article class="insight-small">
+          <div class="insight-small-number">07</div>
+          <div>
+            <span>Materials</span>
+            <h3>Materials Testing: The Evidence Behind Good Design</h3>
+            <p>Reliable sampling and laboratory testing turn assumptions into engineering evidence for material selection and quality control.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Materials Quality • Insight 07"
+              data-title="Materials Testing: The Evidence Behind Good Design"
+              data-description="Reliable sampling and laboratory testing turn assumptions into engineering evidence for material selection and quality control."
+              data-long="Every engineering decision about materials rests on information. Sampling and laboratory testing provide that information in a form that can be used for design, quality control and construction acceptance. Field sampling must be representative: samples should reflect the material actually available on site, taken at appropriate locations and depths. Laboratory tests then characterize index properties, strength, compaction behaviour, gradation, durability and other relevant parameters. Interpreting results requires context: values should be compared against specification requirements, design assumptions and prior experience with similar materials. Where materials do not meet requirements, testing can also identify whether they can be improved through blending, processing or stabilization. Finally, testing continues during construction: compliance testing verifies that delivered materials and completed work match the design intent, providing the objective evidence that supports payment and acceptance decisions.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+        <article class="insight-small">
+          <div class="insight-small-number">08</div>
+          <div>
+            <span>Design</span>
+            <h3>From Concept to Construction: The Design Lifecycle</h3>
+            <p>A coordinated design process moves a project from initial idea through to buildable documentation.</p>
+            <button type="button" class="btn btn-arrow"
+              data-detail
+              data-kicker="Design Process • Insight 08"
+              data-title="From Concept to Construction: The Design Lifecycle"
+              data-description="A coordinated design process moves a project from initial idea through to buildable documentation."
+              data-long="Engineering design is not a single step; it is a staged process in which the level of detail increases as the project moves toward construction. Conceptual design explores options and establishes the broad direction of the scheme. Preliminary design refines the selected option, tests its technical feasibility and prepares information for review and approval. Detailed design then produces the drawings, specifications, calculations and quantities that will be used for tender and construction. Throughout, coordination between disciplines is essential: roads, drainage, structures, utilities, environment and cost all affect one another, and design decisions made in one area create constraints in another. The result of a well-managed design lifecycle is a coherent set of documents that bidders can price, contractors can build from, and supervisors can measure performance against.">
+              Read Insight
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="cta reveal">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Need project-specific guidance?</h2>
+      <p>General information is useful; project decisions should be made with qualified engineering professionals.</p>
+      <a href="contact.html" class="btn btn-primary btn-arrow">Talk to SBS</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-container">
+    <div class="footer-about">
+      <img src="../assets/logos/sbs-buttom-logo.png" alt="SBS Logo">
+      <p>Engineering solutions focused on quality, reliability, and long-term value.</p>
+      <div class="footer-socials" aria-label="Social media">
+        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/></svg></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/></svg></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9z"/></svg></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="../pages/projects.html">Projects</a></li>
+        <li><a href="../pages/insights.html">Insights</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Bole Sub-City, Addis Ababa</li>
+        <li><a href="tel:+251997002023">+251 997 00 20 23</a></li>
+        <li><a href="mailto:sbsengineeringconsultancy@gmail.com">sbsengineeringconsultancy@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div class="container">
+      <p>© 2026 SBS Engineering Consultancy. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" type="button" aria-label="Back to top">↑</button>
+
+<div class="detail-modal" id="detailModal" aria-hidden="true">
+  <div class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <button class="detail-close" type="button" data-modal-close aria-label="Close details">×</button>
+    <div class="detail-kicker" data-modal-kicker>Details</div>
+    <h2 id="detailTitle" data-modal-title>SBS Engineering Consultancy</h2>
+    <div class="detail-body" data-modal-body></div>
+  </div>
+</div>
+
+<script src="../js/main.js" defer></script>
+<script src="../js/slider.js" defer></script>
+<script src="../js/animation.js" defer></script>
+<script src="../js/ai-widget.js"></script>
+
+</body>
+</html>

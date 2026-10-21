@@ -1,0 +1,140 @@
+/* ==========================================
+   SBS AI CONTACT CTA
+   ========================================== */
+
+.sbs-ai-contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    margin: 18px 0;
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    backdrop-filter: blur(12px);
+
+    animation: sbsContactAppear 0.35s ease;
+}
+
+
+.sbs-ai-contact-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.1);
+
+    font-size: 20px;
+}
+
+
+.sbs-ai-contact-content {
+    flex: 1;
+}
+
+
+.sbs-ai-contact-content strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 15px;
+}
+
+
+.sbs-ai-contact-content p {
+    margin: 0 0 14px;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    opacity: 0.75;
+}
+
+
+.sbs-ai-contact-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    background: #ffffff;
+    color: #111111;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.sbs-ai-contact-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+}
+
+
+.sbs-ai-contact-button span {
+    transition:
+        transform 0.2s ease;
+}
+
+
+.sbs-ai-contact-button:hover span {
+    transform: translateX(3px);
+}
+
+
+@keyframes sbsContactAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .sbs-ai-contact-card {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .sbs-ai-contact-button {
+        width: 100%;
+    }
+
+}

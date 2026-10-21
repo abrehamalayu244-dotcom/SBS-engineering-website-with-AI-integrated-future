@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SBS AI — an engineering information assistant from SBS Engineering Consultancy."
+    >
+
+    <title>SBS AI | Engineering Intelligence Assistant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="icon" href="../assets/logos/sbs-logo.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>/* ================================
+   INPUT AREA — Rotating border ring
+   ================================ */
+ .ai-page {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(196, 154, 61, 0.08),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 70%,
+                    rgba(15, 35, 58, 0.08),
+                    transparent 30%
+                ),
+                #f7f8fa;
+        }
+
+        /* ---------- AI HERO ---------- */
+
+        .ai-hero {
+            position: relative;
+            padding: 110px 0 70px;
+            overflow: hidden;
+        }
+
+        .ai-grid-background {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.35;
+
+            background-image:
+                linear-gradient(
+                    rgba(20, 35, 50, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(20, 35, 50, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 55px 55px;
+        }
+
+        .ai-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 15px;
+
+            border: 1px solid rgba(196, 154, 61, 0.35);
+            border-radius: 999px;
+
+            background: rgba(196, 154, 61, 0.07);
+
+            color: #a77c25;
+
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .ai-status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #c49a3d;
+            box-shadow: 0 0 0 5px rgba(196, 154, 61, 0.1);
+            animation: aiPulse 2.2s ease-in-out infinite;
+        }
+
+        @keyframes aiPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 4px rgba(196, 154, 61, 0.08);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(196, 154, 61, 0.02);
+            }
+        }
+
+        .ai-hero h1 {
+            margin: 24px 0 18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2.7rem, 6vw, 5.4rem);
+            line-height: 0.98;
+            letter-spacing: -0.045em;
+            font-weight: 600;
+
+            color: #122235;
+        }
+
+        .ai-hero h1 span {
+            color: #b8892f;
+        }
+
+        .ai-hero p {
+            max-width: 680px;
+            margin: 0 auto;
+
+            color: #66717d;
+
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ---------- AI WORKSPACE ---------- */
+
+        .ai-workspace-section {
+            padding: 30px 0 110px;
+        }
+
+        .ai-workspace {
+            max-width: 1080px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            background: #ffffff;
+
+            border: 1px solid rgba(15, 35, 58, 0.09);
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 70px rgba(15, 35, 58, 0.09);
+        }
+
+        /* ---------- SIDEBAR ---------- */
+
+        .ai-sidebar {
+            padding: 28px 20px;
+
+            background: #101f30;
+
+            color: white;
+        }
+
+        .ai-sidebar-title {
+            margin-bottom: 7px;
+
+            font-family: "Manrope", sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .ai-sidebar-subtitle {
+            margin-bottom: 28px;
+
+            color: rgba(255,255,255,0.55);
+
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+
+        .ai-suggestion {
+            width: 100%;
+
+            margin-bottom: 9px;
+            padding: 13px 12px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.035);
+
+            color: rgba(255,255,255,0.78);
+
+            text-align: left;
+            font: inherit;
+            font-size: 0.78rem;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .ai-suggestion:hover {
+            transform: translateX(4px);
+
+            background: rgba(196,154,61,0.12);
+            border-color: rgba(196,154,61,0.3);
+
+            color: #ffffff;
+        }
+
+        .ai-sidebar-bottom {
+            margin-top: 35px;
+            padding-top: 22px;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .ai-sidebar-bottom p {
+            margin: 0;
+
+            color: rgba(255,255,255,0.45);
+
+            font-size: 0.7rem;
+            line-height: 1.6;
+        }
+
+        /* ---------- CHAT ---------- */
+
+        .ai-chat {
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
+        }
+
+        .ai-chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 20px 25px;
+
+            border-bottom: 1px solid rgba(15,35,58,0.08);
+        }
+
+        .ai-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ai-avatar {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: #122235;
+
+            color: #d4ac55;
+
+            font-size: 1rem;
+        }
+
+        .ai-identity strong {
+            display: block;
+
+            color: #15283b;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .ai-online {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #7b8792;
+
+            font-size: 0.7rem;
+        }
+
+        .ai-clear {
+            border: 0;
+            background: transparent;
+
+            color: #7b8792;
+
+            font: inherit;
+            font-size: 0.72rem;
+
+            cursor: pointer;
+        }
+
+        .ai-clear:hover {
+            color: #a77c25;
+        }
+
+        /* ---------- MESSAGES ---------- */
+
+        .ai-messages {
+            flex: 1;
+
+            min-height: 390px;
+            max-height: 500px;
+
+            padding: 28px;
+
+            overflow-y: auto;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.92),
+                    rgba(248,249,251,0.92)
+                );
+        }
+
+        .ai-message {
+            display: flex;
+            margin-bottom: 18px;
+        }
+
+        .ai-message.user {
+            justify-content: flex-end;
+        }
+
+        .ai-message-content {
+            max-width: 75%;
+
+            padding: 14px 17px;
+
+            border-radius: 14px;
+
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .ai-message.assistant .ai-message-content {
+            background: #ffffff;
+
+            border: 1px solid rgba(15,35,58,0.08);
+
+            color: #44515d;
+
+            border-top-left-radius: 4px;
+        }
+
+        .ai-message.user .ai-message-content {
+            background: #122235;
+
+            color: #ffffff;
+
+            border-top-right-radius: 4px;
+        }
+
+        .ai-message strong {
+            color: #172b3f;
+        }
+
+        .ai-message.user strong {
+            color: #ffffff;
+        }
+
+        /* ---------- TYPING ---------- */
+
+        .ai-typing {
+            display: none;
+            align-items: center;
+            gap: 5px;
+
+            width: fit-content;
+
+            margin: 0 0 15px 28px;
+            padding: 13px 16px;
+
+            border: 1px solid rgba(15,35,58,0.07);
+            border-radius: 14px;
+
+            background: white;
+        }
+
+        .ai-typing.active {
+            display: flex;
+        }
+
+        .ai-typing span {
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #9aa4ad;
+
+            animation: typing 1.1s infinite ease-in-out;
+        }
+
+        .ai-typing span:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .ai-typing span:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes typing {
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-4px);
+            }
+        }
+
+        
+        /* ---------- CAPABILITIES ---------- */
+
+        .ai-capabilities {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .ai-section-heading {
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        .ai-section-heading span {
+            color: #b8892f;
+
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .ai-section-heading h2 {
+            margin: 12px 0;
+
+            color: #122235;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.08;
+            font-weight: 600;
+            letter-spacing: -0.035em;
+        }
+
+        .ai-section-heading p {
+            color: #68737d;
+
+            line-height: 1.8;
+        }
+
+        .ai-capability-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .ai-capability {
+            padding: 27px 23px;
+
+            border: 1px solid rgba(15,35,58,0.08);
+            border-radius: 16px;
+
+            background: #fbfcfd;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .ai-capability:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(196,154,61,0.28);
+
+            box-shadow:
+                0 18px 40px rgba(15,35,58,0.07);
+        }
+
+        .ai-capability-icon {
+            margin-bottom: 20px;
+
+            color: #b8892f;
+
+            font-size: 1.3rem;
+        }
+
+        .ai-capability h3 {
+            margin: 0 0 9px;
+
+            color: #172b3f;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .ai-capability p {
+            margin: 0;
+
+            color: #77818b;
+
+            font-size: 0.78rem;
+            line-height: 1.7;
+        }
+
+        /* ---------- CTA ---------- */
+
+        .ai-cta {
+            padding: 100px 0;
+            background: #101f30;
+        }
+
+        .ai-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .ai-cta h2 {
+            max-width: 650px;
+
+            margin: 0 0 12px;
+
+            color: white;
+
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.08;
+            font-weight: 600;
+            letter-spacing: -0.035em;
+        }
+
+        .ai-cta p {
+            max-width: 620px;
+
+            margin: 0;
+
+            color: rgba(255,255,255,0.62);
+
+            line-height: 1.7;
+        }
+
+        .ai-cta-button {
+            flex: 0 0 auto;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 13px 19px;
+
+            border-radius: 9px;
+
+            background: #c49a3d;
+
+            color: white;
+
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .ai-cta-button:hover {
+            transform: translateY(-2px);
+            background: #a77c25;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 900px) {
+
+            .ai-workspace {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-sidebar {
+                display: none;
+            }
+
+            .ai-capability-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ai-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .ai-hero {
+                padding: 90px 0 50px;
+            }
+
+            .ai-hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .ai-hero p {
+                font-size: 0.9rem;
+            }
+
+            .ai-workspace-section {
+                padding-bottom: 70px;
+            }
+
+            .ai-workspace {
+                border-radius: 15px;
+            }
+
+            .ai-messages {
+                min-height: 400px;
+                padding: 20px 15px;
+            }
+
+            .ai-message-content {
+                max-width: 88%;
+                font-size: 0.82rem;
+            }
+
+            .ai-chat-header {
+                padding: 16px;
+            }
+
+            .ai-input-area {
+                padding: 16px;
+            }
+
+            .ai-capability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-capabilities,
+            .ai-cta {
+                padding: 75px 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .ai-status-dot,
+            .ai-typing span,
+            .ai-input-label::before {
+                animation: none;
+            }
+
+            .ai-input-wrapper::before {
+                animation: none;
+                opacity: 0.7;
+            }
+
+            .ai-capability,
+            .ai-suggestion,
+            .ai-send,
+            .ai-cta-button {
+                transition: none;
+            }
+        }
+.ai-input-area {
+    padding: 22px 22px 24px;
+    border-top: 1px solid rgba(15,35,58,0.08);
+    background: #ffffff;
+}
+
+.ai-input-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #b8892f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.ai-input-label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #c49a3d;
+    box-shadow: 0 0 0 4px rgba(196,154,61,0.15);
+    animation: aiPulse 2.2s ease-in-out infinite;
+}
+
+/* ================================
+   THE ANIMATED ROTATING BORDER
+   ================================
+   .ai-input-ring is an absolutely-positioned element
+   that sits BEHIND the actual input wrapper.
+   It has a conic gradient border and rotates continuously.
+   Rotation stops when the user focuses / types.
+*/
+
+.ai-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 16px;
+    background: #ffffff;
+    isolation: isolate;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Rotating ring behind the wrapper */
+.ai-input-ring {
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: 18px;
+
+    /* Conic gradient that looks like a moving border */
+    background: conic-gradient(
+        from var(--ring-angle, 0deg),
+        transparent 0deg,
+        transparent 300deg,
+        #c49a3d 320deg,
+        #e6c77b 340deg,
+        #c49a3d 355deg,
+        transparent 360deg
+    );
+
+    /* Animate the angle */
+    animation: aiRingSpin 3.5s linear infinite;
+
+    /* Default soft glow */
+    opacity: 0.9;
+
+    transition: opacity 0.35s ease;
+}
+
+/* Static base ring so the input always has a visible border */
+.ai-input-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    border-radius: inherit;
+    background: rgba(15,35,58,0.12);
+}
+
+/* White inner surface so text is on a clean background */
+.ai-input-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: #ffffff;
+}
+
+/* ---------- ANIMATION KEYFRAMES ---------- */
+
+@keyframes aiRingSpin {
+    from { --ring-angle: 0deg; }
+    to   { --ring-angle: 360deg; }
+}
+
+/* CSS custom property animation (works in modern browsers) */
+@property --ring-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* ---------- STOP ROTATION WHEN USER ENGAGES ---------- */
+
+/* When the input is focused OR has content — freeze the ring */
+.ai-input-wrapper:focus-within .ai-input-ring,
+.ai-input-wrapper.has-value .ai-input-ring {
+    animation-play-state: paused;
+    opacity: 1;
+}
+
+/* Focused style: outer glow + slight highlight */
+.ai-input-wrapper:focus-within {
+    box-shadow:
+        0 0 0 6px rgba(196,154,61,0.10),
+        0 12px 30px rgba(15,35,58,0.08);
+}
+
+#aiInput {
+    flex: 1;
+    min-height: 44px;
+    max-height: 120px;
+    padding: 11px 12px;
+    resize: none;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #263849;
+    font: inherit;
+    font-size: 0.86rem;
+    position: relative;
+    z-index: 2;
+}
+
+#aiInput::placeholder {
+    color: #a0a9b1;
+}
+
+.ai-send {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 11px;
+    background: #c49a3d;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.ai-send:hover {
+    transform: translateY(-2px);
+    background: #a77c25;
+}
+
+.ai-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ai-input-note {
+    margin: 10px 3px 0;
+    color: #9aa3ac;
+    font-size: 0.65rem;
+    line-height: 1.5;
+} </style>
+</head>
+
+<body>
+
+<div class="ai-page">
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="navbar container">
+            <a href="../index.html" class="logo" aria-label="SBS Engineering Consultancy home">
+                <img src="../assets/logos/sbs-logo.png" alt="SBS Engineering Consultancy Logo">
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="ai.html">✦ SBS AI</a></li>
+            </ul>
+
+            <a href="contact.html" class="btn btn-primary btn-arrow">Get Consultation</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="ai-hero">
+
+        <div class="ai-grid-background"></div>
+
+        <div class="container">
+
+            <div class="ai-hero-content">
+
+                <span class="ai-badge">
+                    <span class="ai-status-dot"></span>
+                    SBS AI · Engineering Assistant
+                </span>
+
+                <h1>
+                    Engineering
+                    <span>intelligence.</span>
+                </h1>
+
+                <p>
+                    Explore SBS Engineering Consultancy, understand
+                    engineering concepts, discover our services, and
+                    get guidance on where to begin with your project.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI WORKSPACE -->
+
+    <section class="ai-workspace-section">
+
+        <div class="container">
+
+            <div class="ai-workspace">
+
+                <!-- SIDEBAR -->
+
+                <aside class="ai-sidebar">
+
+                    <div class="ai-sidebar-title">
+                        Ask SBS AI
+                    </div>
+
+                    <div class="ai-sidebar-subtitle">
+                        Start with one of the questions below or ask
+                        something in your own words.
+                    </div>
+
+                    <button
+                        class="ai-suggestion"
+                        data-question="What services does SBS provide?"
+                    >
+                        What services does SBS provide?
+                    </button>
+
+                    <button
+                        class="ai-suggestion"
+                        data-question="What is structural engineering?"
+                    >
+                        What is structural engineering?
+                    </button>
+
+                    <button
+                        class="ai-suggestion"
+                        data-question="What does highway engineering involve?"
+                    >
+                        What does highway engineering involve?
+                    </button>
+
+                    <button
+                        class="ai-suggestion"
+                        data-question="Which SBS service might my project need?"
+                    >
+                        Which service might my project need?
+                    </button>
+
+                    <button
+                        class="ai-suggestion"
+                        data-question="How can I start a project with SBS?"
+                    >
+                        How can I start a project with SBS?
+                    </button>
+
+                    <div class="ai-sidebar-bottom">
+
+                        <p>
+                            SBS AI is designed to provide general
+                            information and engineering guidance.
+                            Professional engineering decisions should
+                            be reviewed by qualified engineers.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- CHAT -->
+
+                <main class="ai-chat">
+
+                    <div class="ai-chat-header">
+
+                        <div class="ai-identity">
+
+                            <div class="ai-avatar">
+                                ✦
+                            </div>
+
+                            <div>
+                                <strong>SBS AI</strong>
+                                <span class="ai-online">
+                                    Engineering information assistant
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="ai-clear"
+                            id="clearChat"
+                        >
+                            Clear conversation
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="ai-messages"
+                        id="aiMessages"
+                        aria-live="polite"
+                    >
+
+                        <div class="ai-message assistant">
+
+                            <div class="ai-message-content">
+
+                                <strong>
+                                    Welcome to SBS AI.
+                                </strong>
+
+                                <br><br>
+
+                                I can help you learn about SBS
+                                Engineering Consultancy, explore our
+                                engineering services, or explain
+                                general engineering concepts.
+
+                                <br><br>
+
+                                What would you like to explore?
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="ai-typing"
+                        id="aiTyping"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
+                    <form
+                        class="ai-input-area"
+                        id="aiForm"
+                    >
+
+                        <label class="ai-input-label" for="aiInput">
+                            Ask your question here
+                        </label>
+
+                        <div class="ai-input-wrapper">
+    <span class="ai-input-ring" aria-hidden="true"></span>
+    <textarea placeholder="ASK SBS AI" id="aiInput" ...></textarea>
+    <button type="submit" class="ai-send" id="aiSend" ...>➜</button>
+</div>
+
+                        <p class="ai-input-note">
+                            AI responses are informational and should
+                            not replace professional engineering advice.
+                        </p>
+
+                    </form>
+
+                </main>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CAPABILITIES -->
+
+    <section class="ai-capabilities">
+
+        <div class="container">
+
+            <div class="ai-section-heading">
+
+                <span>
+                    What SBS AI can help with
+                </span>
+
+                <h2>
+                    Engineering knowledge,
+                    made accessible.
+                </h2>
+
+                <p>
+                    SBS AI is designed to connect visitors with useful
+                    information before they begin a conversation with
+                    the SBS engineering team.
+                </p>
+
+            </div>
+
+
+            <div class="ai-capability-grid">
+
+                <article class="ai-capability">
+
+                    <div class="ai-capability-icon">
+                        ◈
+                    </div>
+
+                    <h3>
+                        About SBS
+                    </h3>
+
+                    <p>
+                        Learn about SBS, our areas of expertise,
+                        approach and engineering consultancy services.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-capability">
+
+                    <div class="ai-capability-icon">
+                        ⬡
+                    </div>
+
+                    <h3>
+                        Engineering Concepts
+                    </h3>
+
+                    <p>
+                        Ask questions about engineering principles,
+                        terminology, processes and project stages.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-capability">
+
+                    <div class="ai-capability-icon">
+                        ⌁
+                    </div>
+
+                    <h3>
+                        Project Guidance
+                    </h3>
+
+                    <p>
+                        Explore the types of engineering services that
+                        may be relevant to different project needs.
+                    </p>
+
+                </article>
+
+
+                <article class="ai-capability">
+
+                    <div class="ai-capability-icon">
+                        ↗
+                    </div>
+
+                    <h3>
+                        Find Your Next Step
+                    </h3>
+
+                    <p>
+                        When you're ready, move from information to
+                        a direct conversation with the SBS team.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="ai-cta">
+
+        <div class="container">
+
+            <div class="ai-cta-inner">
+
+                <div>
+
+                    <h2>
+                        Have a real engineering
+                        project in mind?
+                    </h2>
+
+                    <p>
+                        Use SBS AI to explore your questions, then
+                        connect directly with SBS Engineering Consultancy
+                        when you're ready to discuss your project.
+                    </p>
+
+                </div>
+
+                <a
+                    href="contact.html"
+                    class="ai-cta-button"
+                >
+                    Discuss Your Project
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-about">
+                <img src="../assets/logos/sbs-buttom-logo.png" alt="SBS Logo">
+                <p>Engineering solutions focused on quality, reliability, and long-term value.</p>
+                <div class="footer-socials" aria-label="Social media">
+                    <a href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/></svg></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/></svg></a>
+                    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9z"/></svg></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/></svg></a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <ul>
+                    <li>Bole Sub-City, Addis Ababa</li>
+                    <li><a href="tel:+251997002023">+251 997 00 20 23</a></li>
+                    <li><a href="mailto:sbsengineeringconsultancy@gmail.com">sbsengineeringconsultancy@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <p>© 2026 SBS Engineering Consultancy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+
+    <button id="scrollTop" type="button" aria-label="Back to top">↑</button>
+
+</div>
+
+<script src="../js/main.js" defer></script>
+<script src="../js/animation.js" defer></script>
+<script src="../js/ai.js" defer></script>
+<script src="../js/ai-widget.js" defer></script>
+
+</body>
+</html>

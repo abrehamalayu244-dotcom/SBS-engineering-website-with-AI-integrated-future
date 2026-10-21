@@ -1,0 +1,1928 @@
+/* =========================================================
+   SBS ENGINEERING CONSULTANCY
+   RESPONSIVE STYLES
+   FULL MOBILE RESPONSIVENESS FIX
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE SAFETY
+   ========================================================= */
+
+/*
+ * Prevent any child element from creating a horizontal page.
+ * This is especially important on very narrow mobile screens.
+ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 0;
+}
+
+
+/*
+ * Make sure common layout elements cannot become wider
+ * than the available viewport.
+ */
+
+header,
+main,
+footer,
+section,
+nav,
+.container {
+  max-width: 100%;
+}
+
+
+/*
+ * Long words, titles, URLs and generated detail text
+ * must be allowed to wrap.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+button {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/*
+ * Flex/grid children are allowed to shrink.
+ */
+
+.navbar,
+.hero-container,
+.hero-content,
+.project-card,
+.service-card,
+.insight-card,
+.insight-featured,
+.about-container,
+.contact-grid,
+.footer-container,
+.detail-dialog,
+.detail-body {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    width: 92%;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .projects-grid {
+    gap: 22px;
+  }
+
+  .services-grid {
+    gap: 22px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* -------------------------------------------------------
+     NAVIGATION
+     ------------------------------------------------------- */
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+
+  /* -------------------------------------------------------
+     HERO
+     ------------------------------------------------------- */
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1,
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p,
+  .hero p {
+    font-size: 17px;
+  }
+
+
+  /* -------------------------------------------------------
+     PROJECTS
+     ------------------------------------------------------- */
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* -------------------------------------------------------
+     SERVICES
+     ------------------------------------------------------- */
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* -------------------------------------------------------
+     ABOUT
+     ------------------------------------------------------- */
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTACT
+     ------------------------------------------------------- */
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -------------------------------------------------------
+     FOOTER
+     ------------------------------------------------------- */
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* -------------------------------------------------------
+     FEATURED INSIGHTS
+     ------------------------------------------------------- */
+
+  .insights-featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -------------------------------------------------------
+     HOME AI CTA
+     ------------------------------------------------------- */
+
+  .home-ai-cta-inner {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   MOBILE — MAIN BREAKPOINT
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =======================================================
+     GLOBAL MOBILE SAFETY
+     ======================================================= */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  main,
+  section,
+  header,
+  footer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container {
+    width: 92%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* =======================================================
+     HEADER
+     ======================================================= */
+
+  header {
+    position: relative;
+    z-index: var(--z-header);
+  }
+
+
+  .navbar {
+    position: relative;
+
+    width: 92%;
+    max-width: 100%;
+
+    min-height: 70px;
+
+    padding: 12px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     LOGO
+     ------------------------------------------------------- */
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    flex: 0 1 auto;
+  }
+
+  .logo img {
+    display: block;
+
+    width: 82px;
+    max-width: 82px;
+    height: auto;
+  }
+
+
+  /* -------------------------------------------------------
+     HAMBURGER
+     ------------------------------------------------------- */
+
+  .menu-toggle {
+    display: grid;
+
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    place-items: center;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+
+    background: var(--white);
+    color: var(--primary-color);
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 1001;
+  }
+
+
+  .menu-toggle:hover {
+    background: var(--background);
+  }
+
+
+  /* -------------------------------------------------------
+     DESKTOP NAVIGATION HIDDEN
+     ------------------------------------------------------- */
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 8px 0;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    background: var(--white);
+
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    box-shadow: var(--shadow-md);
+
+    z-index: 1000;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     NAVIGATION OPEN
+     ------------------------------------------------------- */
+
+  .nav-links.active {
+    display: flex;
+  }
+
+
+  .nav-links li {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .nav-links a {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 14px 20px;
+
+    font-size: 15px;
+    line-height: 1.4;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .nav-links a::after {
+    left: 20px;
+    bottom: 7px;
+
+    width: 0;
+  }
+
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: calc(100% - 40px);
+  }
+
+
+  /* Hide desktop consultation button */
+
+  .navbar > .btn {
+    display: none;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 470px;
+
+    padding: 80px 0 55px;
+
+    overflow: hidden;
+  }
+
+
+  .hero-container {
+    width: 92%;
+    max-width: 100%;
+  }
+
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .hero-tag {
+    max-width: 100%;
+
+    font-size: 10px;
+
+    letter-spacing: .13em;
+
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .hero-tag::before {
+    flex: 0 0 28px;
+  }
+
+
+  /*
+   * IMPORTANT:
+   * The desktop hero uses clamp() with a 48px minimum.
+   * That is too large on extremely narrow phone viewports.
+   */
+
+  .hero h1,
+  .hero-content h1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 20px;
+
+    font-size: clamp(30px, 9vw, 42px);
+
+    line-height: 1.08;
+
+    letter-spacing: -.035em;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .hero p,
+  .hero-content p {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* -------------------------------------------------------
+     HERO BUTTONS
+     ------------------------------------------------------- */
+
+  .hero-buttons {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 12px;
+
+    margin-top: 26px;
+  }
+
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    white-space: normal;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =======================================================
+     PAGE HERO
+     ======================================================= */
+
+  .page-hero {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 60px 0;
+  }
+
+
+  .page-hero h1 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(30px, 8vw, 40px);
+
+    line-height: 1.12;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .page-hero p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     SECTION HEADINGS
+     ======================================================= */
+
+  .section-title {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 32px;
+  }
+
+
+  .section-title h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(25px, 7vw, 32px);
+
+    line-height: 1.18;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .section-title p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  .section-tag {
+    max-width: 100%;
+
+    font-size: 10px;
+
+    letter-spacing: .11em;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =======================================================
+     COMMON GRIDS
+     ======================================================= */
+
+  .values-grid,
+  .services-grid,
+  .projects-grid,
+  .insights-grid,
+  .contact-grid,
+  .stats-grid,
+  .process-grid,
+  .approach-list {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  /* =======================================================
+     ABOUT
+     ======================================================= */
+
+  .about-container {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .about-image img {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 280px;
+
+    height: auto;
+
+    object-fit: cover;
+  }
+
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .about-content h2 {
+    font-size: clamp(25px, 7vw, 32px);
+
+    overflow-wrap: break-word;
+  }
+
+
+  .about-content p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     PROJECTS
+     ======================================================= */
+
+  .projects-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /*
+   * Keep project section visible if reveal animation
+   * does not initialize on mobile.
+   */
+
+  .projects-section.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+
+  .projects-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+
+  .project-card img {
+    width: 100%;
+    max-width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+  }
+
+
+  .project-content {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 20px;
+  }
+
+
+  .project-content h3 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .project-content p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /*
+   * The desktop version uses 3 columns.
+   * Three columns are too narrow on a phone.
+   */
+
+  .project-meta {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+    margin: 16px 0;
+  }
+
+
+  .project-meta div {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 12px;
+  }
+
+
+  .project-meta strong,
+  .project-meta span {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  /* =======================================================
+     SERVICES
+     ======================================================= */
+
+  .services-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .service-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 24px;
+  }
+
+
+  .service-card h3 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .service-card p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     SERVICE / PROJECT BUTTONS
+     ======================================================= */
+
+  .project-content .btn,
+  .service-card .btn,
+  .insight-content .btn {
+    width: auto;
+    max-width: 100%;
+
+    min-width: 0;
+
+    white-space: normal;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =======================================================
+     FEATURED INSIGHTS
+     ======================================================= */
+
+  .home-insights {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .insights-featured-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .insight-featured {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+
+  .insight-image {
+    width: 100%;
+    max-width: 100%;
+
+    height: 220px;
+  }
+
+
+  .insight-content {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 20px;
+  }
+
+
+  .insight-content h3 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .insight-content p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .insight-side-column {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .insight-small {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    grid-template-columns: 38px minmax(0, 1fr);
+
+    gap: 14px;
+
+    padding: 18px 0;
+  }
+
+
+  .insight-small h3 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 17px;
+
+    line-height: 1.45;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =======================================================
+     AI CTA
+     ======================================================= */
+
+  .home-ai-cta-inner {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+
+  .home-ai-cta h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(26px, 7vw, 38px);
+
+    overflow-wrap: break-word;
+  }
+
+
+  .home-ai-cta p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+  }
+
+
+  .ai-cta-button {
+    max-width: 100%;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =======================================================
+     PROCESS
+     ======================================================= */
+
+  .process-grid,
+  .approach-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .process-step {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     CTA
+     ======================================================= */
+
+  .cta-box {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 40px 22px;
+
+    overflow: hidden;
+  }
+
+
+  .cta-box h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(25px, 7vw, 34px);
+
+    overflow-wrap: break-word;
+  }
+
+
+  .cta-box p {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 15px;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .cta-box .btn {
+    max-width: 100%;
+
+    white-space: normal;
+  }
+
+
+  /* =======================================================
+     CONTACT
+     ======================================================= */
+
+  .contact-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+
+  .contact-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    padding: 22px;
+  }
+
+
+  .contact-card h3,
+  .contact-card p,
+  .contact-card a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  /* =======================================================
+     FORMS
+     ======================================================= */
+
+  .form-container,
+  form {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  textarea {
+    resize: vertical;
+  }
+
+
+  /* =======================================================
+     DETAIL MODAL
+     ======================================================= */
+
+  .detail-modal {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 12px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  .detail-dialog {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    max-height: 92vh;
+
+    padding: 24px 18px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    border-radius: 16px;
+  }
+
+
+  .detail-dialog h2 {
+    width: 100%;
+    max-width: 100%;
+
+    padding-right: 46px;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .detail-dialog .detail-kicker {
+    width: 100%;
+    max-width: 100%;
+
+    padding-right: 45px;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .detail-body {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-right: 0 !important;
+
+    white-space: normal !important;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .detail-body p,
+  .detail-body li,
+  .detail-body span {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .detail-body p {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+
+  .detail-body h3 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .detail-list {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 18px !important;
+  }
+
+
+  .detail-list li {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  /* -------------------------------------------------------
+     DETAIL GALLERY
+     ------------------------------------------------------- */
+
+  .detail-gallery {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .detail-image {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .detail-image img {
+    width: 100%;
+    max-width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+  }
+
+
+  .detail-summary,
+  .detail-section {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow-wrap: break-word;
+  }
+
+
+  .detail-summary {
+    padding: 14px 15px;
+  }
+
+
+  .detail-section {
+    padding: 16px 15px;
+
+    margin: 16px 0 20px;
+  }
+
+
+  .detail-close {
+    top: 12px;
+    right: 12px;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  /*
+   * IMPORTANT:
+   * The actual footer uses .footer-container,
+   * not .footer-grid.
+   */
+
+  .footer-container {
+    width: 92%;
+    max-width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 50px 0 30px;
+
+    text-align: center;
+  }
+
+
+  .footer-about {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .footer-about img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .footer-about p,
+  footer li,
+  footer a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+
+  .footer-socials {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+
+  /* =======================================================
+     SCROLL TO TOP
+     ======================================================= */
+
+  #scrollTop {
+    right: 14px;
+    bottom: 18px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+
+  /* =======================================================
+     AI FLOATING WIDGET
+     ======================================================= */
+
+  .sbs-ai-widget {
+    right: 14px;
+    bottom: 72px;
+
+    max-width: calc(100vw - 28px);
+  }
+
+
+  .sbs-ai-launcher {
+    max-width: 100%;
+
+    white-space: normal;
+  }
+
+
+  /* =======================================================
+     REVEAL ANIMATION SAFETY
+     ======================================================= */
+
+  /*
+   * Prevent sections from disappearing permanently on
+   * mobile if the reveal observer fails.
+   */
+
+  .reveal {
+    transition:
+      opacity .75s ease,
+      transform .75s ease;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+
+  .container {
+    width: 94%;
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     HEADER
+     ======================================================= */
+
+  .navbar {
+    width: 94%;
+
+    min-height: 64px;
+
+    padding: 10px 0;
+  }
+
+
+  .logo img {
+    width: 76px;
+    max-width: 76px;
+  }
+
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+
+    font-size: 23px;
+  }
+
+
+  .nav-links a {
+    padding: 13px 18px;
+
+    font-size: 15px;
+  }
+
+
+  .nav-links a::after {
+    left: 18px;
+  }
+
+
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: calc(100% - 36px);
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero {
+    min-height: 430px;
+
+    padding: 70px 0 45px;
+  }
+
+
+  .hero h1,
+  .hero-content h1 {
+    font-size: clamp(28px, 9vw, 36px);
+
+    line-height: 1.08;
+  }
+
+
+  .hero p,
+  .hero-content p {
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .hero-buttons .btn {
+    min-height: 48px;
+
+    padding: 12px 15px;
+
+    font-size: 0.78rem;
+  }
+
+
+  /* =======================================================
+     PAGE HERO
+     ======================================================= */
+
+  .page-hero {
+    padding: 50px 0;
+  }
+
+
+  .page-hero h1 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+
+  .page-hero p {
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     SECTION HEADINGS
+     ======================================================= */
+
+  .section-title h2 {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+
+  .section-title p {
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     PROJECTS
+     ======================================================= */
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .project-card img {
+    height: 200px;
+  }
+
+
+  .project-content {
+    padding: 18px;
+  }
+
+
+  .project-content h3 {
+    font-size: 20px;
+  }
+
+
+  .project-content p {
+    font-size: 14px;
+  }
+
+
+  .project-meta {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+
+  .project-meta div {
+    padding: 11px;
+  }
+
+
+  /* =======================================================
+     SERVICES
+     ======================================================= */
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .service-card {
+    padding: 20px;
+  }
+
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     INSIGHTS
+     ======================================================= */
+
+  .insights-featured-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .insight-image {
+    height: 200px;
+  }
+
+
+  .insight-content {
+    padding: 18px;
+  }
+
+
+  .insight-content h3 {
+    font-size: 20px;
+  }
+
+
+  .insight-content p {
+    font-size: 14px;
+  }
+
+
+  .insight-small {
+    grid-template-columns: 34px minmax(0, 1fr);
+
+    gap: 12px;
+  }
+
+
+  .insight-small h3 {
+    font-size: 16px;
+  }
+
+
+  /* =======================================================
+     DETAIL MODAL
+     ======================================================= */
+
+  .detail-modal {
+    padding: 8px;
+  }
+
+
+  .detail-dialog {
+    width: 100%;
+    max-width: 100%;
+
+    max-height: 94vh;
+
+    padding: 22px 15px;
+
+    border-radius: 14px;
+  }
+
+
+  .detail-dialog h2 {
+    font-size: 21px;
+
+    padding-right: 44px;
+  }
+
+
+  .detail-dialog .detail-kicker {
+    padding-right: 42px;
+
+    font-size: 9px;
+  }
+
+
+  .detail-body p,
+  .detail-body li {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  .detail-body h3 {
+    font-size: 17px;
+  }
+
+
+  .detail-image img {
+    height: 175px;
+  }
+
+
+  .detail-section {
+    padding: 14px 13px;
+  }
+
+
+  .detail-summary {
+    padding: 13px;
+  }
+
+
+  .detail-close {
+    width: 38px;
+    height: 38px;
+
+    top: 10px;
+    right: 10px;
+
+    font-size: 21px;
+  }
+
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  .footer-container {
+    width: 94%;
+
+    grid-template-columns: 1fr;
+
+    padding: 45px 0 28px;
+  }
+
+
+  /* =======================================================
+     AI
+     ======================================================= */
+
+  .sbs-ai-widget {
+    right: 12px;
+    bottom: 68px;
+
+    max-width: calc(100vw - 24px);
+  }
+
+
+  /* =======================================================
+     SCROLL TOP
+     ======================================================= */
+
+  #scrollTop {
+    right: 12px;
+    bottom: 14px;
+
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .container {
+    width: 92%;
+  }
+
+
+  .navbar {
+    width: 92%;
+  }
+
+
+  .logo img {
+    width: 70px;
+    max-width: 70px;
+  }
+
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+
+    font-size: 22px;
+  }
+
+
+  .hero h1,
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+
+  .hero p,
+  .hero-content p {
+    font-size: 13px;
+  }
+
+
+  .page-hero h1 {
+    font-size: 27px;
+  }
+
+
+  .project-content h3,
+  .service-card h3,
+  .insight-content h3 {
+    font-size: 18px;
+  }
+
+
+  .detail-dialog {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+
+  .detail-dialog h2 {
+    font-size: 19px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .projects-section.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

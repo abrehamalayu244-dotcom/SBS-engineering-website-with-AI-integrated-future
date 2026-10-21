@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Learn about SBS Engineering Consultancy, our founders, mission, vision, values, and integrated engineering practice."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="icon" href="../assets/logos/sbs-logo.png">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <title>About SBS Engineering Consultancy</title>
+
+
+  <!-- =========================================================
+       FOUNDER SECTION STYLING
+  ========================================================== -->
+
+  <style>
+
+    .founders-section {
+      padding-top: 20px;
+    }
+
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+      align-items: stretch;
+    }
+
+
+    /* =========================
+       FOUNDER CARD
+    ========================== */
+
+    .founder-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      background: var(--color-surface, #ffffff);
+
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+
+    .founder-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.10);
+    }
+
+
+    /* =========================
+       FOUNDER IMAGE
+    ========================== */
+
+    .founder-image {
+      width: 100%;
+      aspect-ratio: 3 / 3.5;
+
+      overflow: hidden;
+
+      background: #f2f4f7;
+    }
+
+
+    .founder-image img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+    /* =========================
+       FOUNDER CONTENT
+    ========================== */
+
+    .founder-content {
+      display: flex;
+      flex-direction: column;
+
+      flex: 1;
+
+      padding: 24px;
+    }
+
+
+    .founder-content h3 {
+      margin: 0;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 1.28rem;
+      line-height: 1.25;
+
+      font-weight: 700;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    /* =========================
+       PROFESSIONAL ROLE
+    ========================== */
+
+    .founder-role {
+      margin: 9px 0 0;
+
+      min-height: 2.9em;
+
+      color: var(--color-primary, #1f4f7a);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: 0.78rem;
+      line-height: 1.55;
+
+      font-weight: 700;
+
+      letter-spacing: 0.045em;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       PROFESSIONAL DESCRIPTION
+    ========================== */
+
+    .founder-description {
+      margin: 12px 0 0;
+
+      min-height: 3.2em;
+
+      padding-top: 12px;
+
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: 0.92rem;
+      line-height: 1.6;
+
+      font-weight: 500;
+
+      opacity: 0.78;
+    }
+
+
+    /* =========================
+       FOUNDER BADGE
+    ========================== */
+
+    .founder-badge {
+      display: inline-flex;
+      align-items: center;
+
+      align-self: flex-start;
+
+      margin-top: auto;
+      padding-top: 18px;
+
+      position: relative;
+    }
+
+
+    .founder-badge span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 7px 15px;
+
+      border: 1px solid rgba(31, 79, 122, 0.22);
+
+      border-radius: 999px;
+
+      background: rgba(31, 79, 122, 0.06);
+
+      color: var(--color-primary, #1f4f7a);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: 0.70rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      white-space: nowrap;
+    }
+
+
+    .founder-badge span::before {
+      content: "◆";
+
+      font-size: 0.42rem;
+
+      opacity: 0.75;
+    }
+
+
+    .founder-badge span::after {
+      content: "◆";
+
+      font-size: 0.42rem;
+
+      opacity: 0.75;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .founders-grid {
+        grid-template-columns: repeat(
+          2,
+          minmax(0, 1fr)
+        );
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 620px) {
+
+      .founders-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+      }
+
+
+      .founder-content {
+        padding: 22px 20px 24px;
+      }
+
+
+      .founder-content h3 {
+        font-size: 1.20rem;
+      }
+
+
+      .founder-role {
+        font-size: 0.73rem;
+      }
+
+
+      .founder-description {
+        font-size: 0.90rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
+  <header>
+
+    <nav class="navbar container">
+
+
+      <a
+        href="../index.html"
+        class="logo"
+        aria-label="SBS Engineering Consultancy home"
+      >
+
+        <img
+          src="../assets/logos/sbs-logo.png"
+          alt="SBS Engineering Consultancy Logo"
+        >
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="../index.html">
+            Home
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            class="active"
+            href="about.html"
+          >
+            About
+          </a>
+        </li>
+
+
+        <li>
+          <a href="services.html">
+            Services
+          </a>
+        </li>
+
+
+        <li>
+          <a href="projects.html">
+            Projects
+          </a>
+        </li>
+
+
+        <li>
+          <a href="insights.html">
+            Insights
+          </a>
+        </li>
+
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+
+        <li>
+          <a href="ai.html">
+            ✦ SBS AI
+          </a>
+        </li>
+
+      </ul>
+
+
+      <a
+        href="contact.html"
+        class="btn btn-primary btn-arrow"
+      >
+        Get Consultation
+      </a>
+
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         PAGE HERO
+    ====================================================== -->
+
+    <section class="page-hero reveal">
+
+      <div class="container">
+
+        <span class="section-tag">
+          Who We Are
+        </span>
+
+
+        <h1>
+          About SBS Engineering Consultancy
+        </h1>
+
+
+        <p>
+          Dependable, standards-compliant engineering for roads,
+          bridges and urban infrastructure.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COMPANY OVERVIEW
+    ====================================================== -->
+
+    <section class="about reveal">
+
+      <div class="container about-container">
+
+
+        <div class="about-image">
+
+          <img
+            src="../assets/images/about-company.jpg"
+            alt="SBS Engineering Consultancy office and team"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="about-content">
+
+          <span class="section-tag">
+            Company Overview
+          </span>
+
+
+          <h2>
+            Engineering experience under one roof
+          </h2>
+
+
+          <p>
+            SBS Engineering Consultancy PLC is an Ethiopian consultancy
+            based in Addis Ababa, established in 2025. The firm brings
+            highway, structural, hydraulic, geotechnical and
+            contract-administration specialists together to carry
+            projects from route selection and topographic survey through
+            detailed design, cost estimation, tender documents, contract
+            administration and construction supervision.
+          </p>
+
+
+          <p>
+            The firm serves public and private clients on projects of
+            regional, national and international scope.
+          </p>
+
+
+          <ul class="about-list">
+
+            <li>
+              Established 2025
+            </li>
+
+            <li>
+              Grade IV – Road and Drilling Consultant
+            </li>
+
+            <li>
+              Senior professionals and technicians
+            </li>
+
+            <li>
+              Head office in Addis Ababa
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOUNDERS
+    ====================================================== -->
+
+    <section class="founders-section reveal">
+
+      <div class="container">
+
+
+        <div class="section-title">
+
+          <span class="section-tag">
+            Leadership
+          </span>
+
+
+          <h2>
+            Our Founders
+          </h2>
+
+
+          <p>
+            SBS Engineering Consultancy was founded by professionals
+            committed to delivering dependable engineering solutions
+            for infrastructure development.
+          </p>
+
+        </div>
+
+
+
+        <div class="founders-grid">
+
+
+          <!-- =================================================
+               FOUNDER 1
+          ================================================== -->
+
+          <article class="founder-card">
+
+
+            <div class="founder-image">
+
+              <img
+                src="../assets/images/founders/birhan-eshetu.jpg"
+                alt="Birhan Eshetu, General Manager and Founder of SBS Engineering Consultancy"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="founder-content">
+
+
+              <h3>
+                Birhan Eshetu
+              </h3>
+
+
+              <p class="founder-role">
+                General Manager
+              </p>
+
+
+              <p class="founder-description">
+                Practicing Professional Highway Engineer
+              </p>
+
+
+              <div class="founder-badge">
+
+                <span>
+                  Founder
+                </span>
+
+              </div>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               FOUNDER 2
+          ================================================== -->
+
+          <article class="founder-card">
+
+
+            <div class="founder-image">
+
+              <img
+                src="../assets/images/founders/salhadin-surur.jpg"
+                alt="Salhadin Surur, Founder of SBS Engineering Consultancy"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="founder-content">
+
+
+              <h3>
+                Salhadin Surur
+              </h3>
+
+
+              <p class="founder-role">
+                Engineering Contract Management &amp;
+                Project Formulation Department Head
+              </p>
+
+
+              <p class="founder-description">
+                Professional Contract Engineer
+              </p>
+
+
+              <div class="founder-badge">
+
+                <span>
+                  Founder
+                </span>
+
+              </div>
+
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =================================================
+               FOUNDER 3
+          ================================================== -->
+
+          <article class="founder-card">
+
+
+            <div class="founder-image">
+
+              <img
+                src="../assets/images/founders/selamawit-banjaw.jpg"
+                alt="Selamawit Banjaw, Founder of SBS Engineering Consultancy"
+                loading="lazy"
+              >
+
+            </div>
+
+
+            <div class="founder-content">
+
+
+              <h3>
+                Selamawit Banjaw
+              </h3>
+
+
+              <p class="founder-role">
+                Design Department Head
+              </p>
+
+
+              <p class="founder-description">
+                Practicing Professional Structural Engineer
+              </p>
+
+
+              <div class="founder-badge">
+
+                <span>
+                  Founder
+                </span>
+
+              </div>
+
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MISSION & VISION
+    ====================================================== -->
+
+    <section class="reveal">
+
+      <div class="container">
+
+
+        <div class="section-title">
+
+          <span class="section-tag">
+            Direction
+          </span>
+
+
+          <h2>
+            Mission &amp; Vision
+          </h2>
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+          <article class="card">
+
+            <h3>
+              Vision
+            </h3>
+
+
+            <p>
+              Our mission is to be a trusted name in Ethiopian
+              infrastructure consultancy recognized for engineering
+              that is technically sound, safe, and built to last.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Mission
+            </h3>
+
+
+            <p>
+              To provide accurate survey, sound design, and honest
+              contract administration and supervision that help our
+              clients deliver roads, bridges, and urban infrastructure
+              efficiently and to standard, while developing our people
+              and strengthening the wider engineering profession.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CORE VALUES
+    ====================================================== -->
+
+    <section class="reveal">
+
+      <div class="container">
+
+
+        <div class="section-title">
+
+          <span class="section-tag">
+            Core Values
+          </span>
+
+
+          <h2>
+            What Guides SBS
+          </h2>
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+          <article class="card">
+
+            <h3>
+              Integrity
+            </h3>
+
+            <p>
+              We give honest advice and stand behind our deliverables.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Technical Excellence
+            </h3>
+
+            <p>
+              We hold our work to national and international
+              engineering standards.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Client Focus
+            </h3>
+
+            <p>
+              We listen, communicate clearly, and deliver what the
+              project needs.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Safety
+            </h3>
+
+            <p>
+              We design with the safety of road users and workers in mind.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Innovation
+            </h3>
+
+            <p>
+              We adopt modern survey, design, and analysis tools to add value.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Sustainability
+            </h3>
+
+            <p>
+              We weigh environmental and social impact in every design.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORGANIZATION
+    ====================================================== -->
+
+    <section class="reveal">
+
+      <div class="container">
+
+
+        <div class="section-title">
+
+          <span class="section-tag">
+            Organization
+          </span>
+
+
+          <h2>
+            Four Departments. One Integrated Practice.
+          </h2>
+
+        </div>
+
+
+
+        <div class="values-grid">
+
+
+          <article class="card">
+
+            <h3>
+              Design Department
+            </h3>
+
+            <p>
+              Led by Selamawit Banjaw. Houses highway, structural,
+              hydraulic, CADD and drafting teams responsible for
+              detailed engineering design.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Contract Management Department
+            </h3>
+
+            <p>
+              Led by Salhadin Surur. manages the execution, monitoring, and closure of construction and engineering contracts to ensure compliance with project scopes, budgets, and applicable conditions of Contract.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Contract Administration
+            </h3>
+
+            <p>
+              Manages contracts, claims and project documentation
+              through implementation.
+            </p>
+
+          </article>
+
+
+
+          <article class="card">
+
+            <h3>
+              Finance &amp; HR
+            </h3>
+
+            <p>
+              Manages the firm's finances, procurement and personnel.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GENERAL MANAGER MESSAGE
+    ====================================================== -->
+
+    <section class="cta reveal">
+
+      <div class="container">
+
+
+        <div class="cta-box">
+
+
+          <h2>
+            Message from the General Manager
+          </h2>
+
+
+          <p>
+            SBS was founded on a simple conviction: Ethiopia's road
+            and infrastructure programs deserve consultants who pair
+            technical rigor with reliability. We commit to clear
+            communication, standards-compliant deliverables and work
+            delivered when we promise it.
+          </p>
+
+
+          <p>
+
+            <strong>
+              Birhan Eshetu
+            </strong>
+
+            <br>
+
+            General Manager, SBS Engineering Consultancy PLC
+
+          </p>
+
+
+          <a
+            href="contact.html"
+            class="btn btn-primary btn-arrow"
+          >
+            Work With SBS
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+
+    <div class="container footer-container">
+
+
+      <!-- Footer About -->
+
+      <div class="footer-about">
+
+
+        <img
+          src="../assets/logos/sbs-buttom-logo.png"
+          alt="SBS Logo"
+        >
+
+
+        <p>
+          Engineering solutions focused on quality,
+          reliability, and long-term value.
+        </p>
+
+
+
+        <div
+          class="footer-socials"
+          aria-label="Social media"
+        >
+
+
+          <!-- Telegram -->
+
+          <a
+            href="https://t.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/>
+
+            </svg>
+
+          </a>
+
+
+
+          <!-- Facebook -->
+
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/>
+
+            </svg>
+
+          </a>
+
+
+
+          <!-- WhatsApp -->
+
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.2-1.6-4.4-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.4-.1-.6-.1-.1-.7-1.6-1-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+
+            </svg>
+
+          </a>
+
+
+
+          <!-- LinkedIn -->
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/>
+
+            </svg>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Company -->
+
+      <div>
+
+        <h3>
+          Company
+        </h3>
+
+
+        <ul>
+
+          <li>
+            <a href="../index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/services.html">
+              Services
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- Explore -->
+
+      <div>
+
+        <h3>
+          Explore
+        </h3>
+
+
+        <ul>
+
+          <li>
+            <a href="../pages/projects.html">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/insights.html">
+              Insights
+            </a>
+          </li>
+
+          <li>
+            <a href="../pages/contact.html">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- Contact -->
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+
+        <ul>
+
+          <li>
+            Bole Sub-City, Addis Ababa
+          </li>
+
+          <li>
+
+            <a href="tel:+251997002023">
+              +251 997 00 20 23
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="mailto:sbsengineeringconsultancy@gmail.com">
+              sbsengineeringconsultancy@gmail.com
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- Copyright -->
+
+    <div class="copyright">
+
+      <div class="container">
+
+        <p>
+          © 2026 SBS Engineering Consultancy.
+          All Rights Reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       BACK TO TOP
+  ========================================================== -->
+
+  <button
+    id="scrollTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+
+  <!-- =========================================================
+       DETAIL MODAL
+  ========================================================== -->
+
+  <div
+    class="detail-modal"
+    id="detailModal"
+    aria-hidden="true"
+  >
+
+
+    <div
+      class="detail-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detailTitle"
+    >
+
+
+      <button
+        class="detail-close"
+        type="button"
+        data-modal-close
+        aria-label="Close details"
+      >
+        ×
+      </button>
+
+
+      <div
+        class="detail-kicker"
+        data-modal-kicker
+      >
+        Details
+      </div>
+
+
+      <h2
+        id="detailTitle"
+        data-modal-title
+      >
+        SBS Engineering Consultancy
+      </h2>
+
+
+      <div
+        class="detail-body"
+        data-modal-body
+      ></div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script
+    src="../js/main.js"
+    defer
+  ></script>
+
+
+  <script
+    src="../js/slider.js"
+    defer
+  ></script>
+
+
+  <script
+    src="../js/animation.js"
+    defer
+  ></script>
+
+
+  <script
+    src="../js/ai-widget.js"
+  ></script>
+
+
+</body>
+
+</html>
