@@ -189,6 +189,9 @@
     transition: background 0.18s ease !important;
 }
 
+
+
+
 /* A simple color change — no scaling or movement */
 .sidama-media-item > .sidama-media-play:hover,
 .sidama-media-item:hover > .sidama-media-play {
@@ -216,6 +219,187 @@
     .sidama-media-grid {
         grid-template-columns: 1fr;
         gap: 16px !important;
+    }
+}
+
+
+/* Responsive Grid for Sidama Media Items */
+.sidama-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.sidama-media-item {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}
+
+.sidama-media-item img,
+.sidama-media-item video {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile Screens Adjustments */
+@media (max-width: 600px) {
+    .sidama-media-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sidama-media-item img,
+    .sidama-media-item video {
+        height: 200px;
+    }
+}
+
+/* =====================================================
+   FEATURED PROJECT GRID & CARD RESPONSIVENESS
+   ===================================================== */
+.featured-project-card {
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 12px;
+}
+
+.featured-project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.featured-project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.featured-project-item strong {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+
+.featured-project-item span {
+    font-size: 0.95rem;
+    color: #222;
+    line-height: 1.4;
+}
+
+/* =====================================================
+   SIDAMA MEDIA GRID & GALLERY RESPONSIVENESS
+   ===================================================== */
+.sidama-part {
+    margin-bottom: 2.5rem;
+}
+
+.sidama-media-label {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+    color: #111;
+}
+
+.sidama-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.sidama-media-item {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f2f4f7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Maintain unified 16:9 aspect ratio across all images and videos */
+.sidama-media-item img,
+.sidama-media-item video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+/* Play button placement for video items */
+.sidama-media-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 2;
+}
+
+.sidama-media-play:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.sidama-media-caption {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: #555;
+    background-color: #fff;
+}
+
+/* =====================================================
+   MEDIA QUERIES FOR TABLET & MOBILE DEVICES
+   ===================================================== */
+
+/* Tablet Viewports (Below 992px) */
+@media (max-width: 992px) {
+    .sidama-media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Mobile Viewports (Below 600px) */
+@media (max-width: 600px) {
+    .featured-project-card {
+        padding: 1rem;
+    }
+
+    .featured-project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sidama-media-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sidama-media-play {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
     }
 }
 </style>
@@ -650,12 +834,6 @@
             </p>
         </div>
 
-        <!-- =====================================================
-             PROJECT GALLERY
-             Edit the text inside each figcaption to describe the media.
-             Keep each description short enough for two displayed lines.
-             ===================================================== -->
-
         <div class="sidama-part" id="sidama-gallery">
             <div class="sidama-part-head">
                 <span class="sidama-part-number">07</span>
@@ -668,209 +846,102 @@
             <h4 class="sidama-media-label">Project Videos</h4>
 
             <div class="sidama-media-grid">
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-1.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
                     <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-2.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-3.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-4.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-5.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="video"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4"
-                        data-media-title="Sidama Package 2 — Project Video">
-                    <video muted playsinline preload="metadata"
-                           src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4#t=0.1"></video>
-                    <button type="button" class="sidama-media-play"
-                            aria-label="Play project video">▶</button>
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-6.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
+                <figure class="sidama-media-item" data-media-type="video" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4" data-media-title="Sidama Package 2 — Project Video">
+                    <video muted playsinline preload="metadata" src="../assets/images/projects/Sidama-Package-2/sidama-package-video-2-7.mp4#t=0.1"></video>
+                    <button type="button" class="sidama-media-play" aria-label="Play project video">▶</button>
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
             </div>
 
             <h4 class="sidama-media-label">Project Photographs</h4>
 
             <div class="sidama-media-grid">
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-1.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-2.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-2.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-3.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-3.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-4.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-4.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-5.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-5.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-7.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-7.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-8.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-8.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-9.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-9.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
-                </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-10.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-10.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-1.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-1.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
                     <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-11.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-11.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-2.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-12.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-12.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-3.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-13.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-13.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-4.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
-                <figure class="sidama-media-item"
-                        data-media-type="image"
-                        data-media-src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-14.jpg"
-                        data-media-title="Sidama Package 2 — Project Photograph">
-                    <img src="../assets/images/projects/Sidama-Package-2/Sidama-package-2-14.jpg"
-                         alt="Sidama Package 2 project photograph" loading="lazy">
-                    <figcaption class="sidama-media-caption"><!-- Replace with your description. -->&nbsp;</figcaption>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-5.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
                 </figure>
-
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-6.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-7.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-8.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-9.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-10.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-11.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-12.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-13.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
+                <figure class="sidama-media-item" data-media-type="image" data-media-src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" data-media-title="Sidama Package 2 — Project Photograph">
+                    <img src="../assets/images/projects/Sidama-Package-2/sidama-package-2-14.jpg" alt="Sidama Package 2 project photograph" loading="lazy">
+                    <figcaption class="sidama-media-caption">&nbsp;</figcaption>
+                </figure>
             </div>
         </div>
     </div>
