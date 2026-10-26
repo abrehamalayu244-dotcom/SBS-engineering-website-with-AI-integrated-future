@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SBS Engineering Consultancy provides engineering, architectural, infrastructure, and construction-related solutions.">
+<meta name="description" content="Contact SBS Engineering Consultancy in Addis Ababa for road, bridge, surveying, design and infrastructure consultancy enquiries.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="icon" href="../assets/logos/sbs-logo.png">
 <link rel="stylesheet" href="../css/variables.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -15,59 +16,450 @@
 <link rel="stylesheet" href="../css/responsive.css">
 
 <title>SBS Engineering Consultancy | Contact</title>
+
+<style>
+/* =========================================================
+   CONTACT PAGE
+   Compact layout with contact details and enquiry form
+   visible together on desktop.
+   ========================================================= */
+
+.contact-page-main {
+  padding: 28px 0 12px;
+}
+
+.contact-page-heading {
+  margin: 0 auto 20px;
+}
+
+.contact-page-heading .section-tag {
+  margin-bottom: 7px;
+}
+
+.contact-page-heading h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.contact-page-heading p {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-page-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.5fr);
+  align-items: start;
+  gap: 100px;
+}
+
+.contact-details-panel,
+.contact-form-panel {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-panel-title {
+  margin: 0 0 18px;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.contact-detail {
+  padding: 0 0 17px;
+  margin: 0 0 17px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-detail:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.contact-detail h3 {
+  margin: 0 0 6px;
+  font-size: 0.96rem;
+}
+
+.contact-detail p,
+.contact-detail address {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.contact-detail a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-detail a:hover {
+  color: var(--secondary-dark);
+}
+
+/* Enquiry form */
+
+.contact-form-panel .section-tag {
+  margin-bottom: 7px;
+}
+
+.contact-form-panel .contact-panel-title {
+  margin-bottom: 5px;
+}
+
+.contact-form-description {
+  margin: 0 0 12px;
+  color: var(--text-light);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Two fields per row on desktop */
+
+.contact-page-form .input-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 16px;
+}
+
+.contact-page-form .input-group {
+  min-width: 0;
+  margin-top: 13px;
+}
+
+.contact-page-form .input-group label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact-page-form .input-group input,
+.contact-page-form .input-group select {
+  width: 100%;
+  min-height: 45px;
+  padding: 11px 12px;
+}
+
+.contact-page-form .input-group textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+.contact-page-form .contact-message-group {
+  margin-top: 13px;
+}
+
+.contact-page-form .btn {
+  margin-top: 13px;
+}
+
+.contact-page-form .form-status {
+  margin-bottom: 0;
+}
+
+/* Location section */
+
+.contact-page-map {
+  padding-top: 22px;
+  padding-bottom: 34px;
+}
+
+.contact-page-map .map-box {
+  min-height: 190px;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 850px) {
+  .contact-page-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-page-main {
+    padding-top: 22px;
+  }
+
+  .contact-details-panel,
+  .contact-form-panel {
+    padding: 20px;
+  }
+
+  .contact-page-form .input-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <nav class="navbar container">
-    <a href="../index.html" class="logo" aria-label="SBS Engineering Consultancy home">
-      <img src="../assets/logos/sbs-logo.png" alt="SBS Engineering Consultancy Logo">
+    <a href="../index.html" class="logo"
+       aria-label="SBS Engineering Consultancy home">
+      <img src="../assets/logos/sbs-logo.png"
+           alt="SBS Engineering Consultancy Logo">
     </a>
 
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false">☰</button>
 
     <ul class="nav-links">
-      <li><a class="" href="../index.html">Home</a></li><li><a class="" href="about.html">About</a></li><li><a class="" href="services.html">Services</a></li><li><a class="" href="projects.html">Projects</a></li><li><a class="" href="insights.html">Insights</a></li><li><a class="active" href="contact.html">Contact</a></li><li>
-    <a href="ai.html">
-        ✦ SBS AI
-    </a>
-</li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="ai.html">✦ SBS AI</a></li>
     </ul>
 
-    <a href="contact.html" class="btn btn-primary btn-arrow">Get Consultation</a>
+    <a href="contact.html" class="btn btn-primary btn-arrow">
+      Get Consultation
+    </a>
   </nav>
 </header>
 
-<main>
-<section class="page-hero reveal"><div class="container"><span class="section-tag">Get In Touch</span><h1>Contact SBS</h1><p>Let's discuss your next road, bridge, survey, design, supervision or infrastructure project.</p></div></section>
-<section class="contact-info reveal"><div class="container"><div class="contact-grid">
-<article class="contact-card card"><h3>Head Office</h3><p>ABATE Building, 1st Floor, Room 122B<br>near Shala Park, Bole Atlas<br>Bole Sub-City, Addis Ababa, Ethiopia</p></article>
-<article class="contact-card card"><h3>Phone</h3><p><a href="tel:+251997002023">+251 997 00 20 23</a><br><a href="tel:+251116359194">+251 11 635 9194</a></p></article>
-<article class="contact-card card"><h3>Email</h3><p><a href="mailto:sbsengineeringconsultancy@gmail.com">sbsengineeringconsultancy@gmail.com</a></p></article>
-</div></div></section>
-<section class="contact-form-section reveal"><div class="container"><div class="form-container">
-<div class="section-title"><span class="section-tag">Project Enquiry</span><h2>Request a Consultation</h2><p>Share a few details about your project. Your enquiry can then be connected to the SBS server endpoint.</p></div>
-<form id="contactForm" novalidate>
-<div class="input-grid"><div class="input-group"><label for="name">Full Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your Name" required></div>
-<div class="input-group"><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="Your Email" required></div></div>
-<div class="input-grid"><div class="input-group"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+251..." required></div>
-<div class="input-group"><label for="service">Service</label><select id="service" name="service" required><option value="">Select Service</option><option>Transportation Planning & Feasibility</option><option>Topographic Survey & Geometric Design</option><option>Geotechnical & Pavement Engineering</option><option>Hydrology, Hydraulics & Structures</option><option>Architectural & Engineering Design</option><option>Supervision & Contract Administration</option><option>Environmental & Social Assessment</option><option>Tender Documents & Cost Estimation</option><option>Materials Investigation & Testing</option></select></div></div>
-<div class="input-group"><label for="message">Project Details</label><textarea id="message" name="message" rows="7" placeholder="Tell us about your project" required></textarea></div>
-<button type="submit" class="btn btn-primary btn-arrow">Send Enquiry</button><p id="formStatus" class="form-status" aria-live="polite"></p>
-</form></div></div></section>
-<section class="map reveal"><div class="container"><div class="map-box"><div><h2>Find the Head Office</h2><p>ABATE Building, 1st Floor, Room 122B, near Shala Park, Bole Atlas, Bole Sub-City, Addis Ababa.</p><a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=ABATE+Building+Bole+Atlas+Addis+Ababa" target="_blank" rel="noopener noreferrer">Open in Maps</a></div></div></div></section>
+<main class="contact-page-main">
+  <div class="container">
+
+    <div class="contact-page-heading reveal">
+      <span class="section-tag">Contact</span>
+      <h1>Contact SBS</h1>
+      <p>
+        Discuss your road, bridge, survey, design or infrastructure
+        project with our team.
+      </p>
+    </div>
+
+    <div class="contact-page-layout">
+
+      <!-- CONTACT INFORMATION -->
+
+      <section class="contact-details-panel reveal"
+               aria-labelledby="contactDetailsTitle">
+
+        <h2 class="contact-panel-title" id="contactDetailsTitle">
+          Contact Information
+        </h2>
+
+        <div class="contact-detail">
+          <h3>Head Office</h3>
+          <address>
+            ABATE Building, 1st Floor, Room 122B,
+            near Shala Park, Bole Atlas,
+            Bole Sub-City, Addis Ababa, Ethiopia
+          </address>
+        </div>
+
+        <div class="contact-detail">
+          <h3>Phone</h3>
+          <p>
+            <a href="tel:+251997002023">+251 997 00 20 23</a><br>
+            <a href="tel:+251116359194">+251 11 635 9194</a>
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:sbsengineeringconsultancy@gmail.com">
+              sbsengineeringconsultancy@gmail.com
+            </a>
+          </p>
+        </div>
+
+      </section>
+
+      <!-- PROJECT ENQUIRY FORM -->
+
+      <section class="contact-form-panel reveal"
+               aria-labelledby="consultationTitle">
+
+        <span class="section-tag">Project Enquiry</span>
+
+        <h2 class="contact-panel-title" id="consultationTitle">
+          Request a Consultation
+        </h2>
+
+        <p class="contact-form-description">
+          Share a few details about your project so our team can
+          understand your enquiry.
+        </p>
+
+        <form id="contactForm" class="contact-page-form" novalidate>
+
+          <div class="input-grid">
+            <div class="input-group">
+              <label for="name">Full Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Your name"
+                required
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Your email"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="input-grid">
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+251..."
+                required
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select service</option>
+                <option>Transportation Planning &amp; Feasibility</option>
+                <option>Topographic Survey &amp; Geometric Design</option>
+                <option>Geotechnical &amp; Pavement Engineering</option>
+                <option>Hydrology, Hydraulics &amp; Structures</option>
+                <option>Architectural &amp; Engineering Design</option>
+                <option>Supervision &amp; Contract Administration</option>
+                <option>Environmental &amp; Social Assessment</option>
+                <option>Tender Documents &amp; Cost Estimation</option>
+                <option>Materials Investigation &amp; Testing</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-group contact-message-group">
+            <label for="message">Project Details</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder="Tell us briefly about your project"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-arrow">
+            Send Enquiry
+          </button>
+
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+
+        </form>
+      </section>
+
+    </div>
+  </div>
 </main>
+
+<!-- OFFICE LOCATION -->
+
+<section class="contact-page-map map reveal">
+  <div class="container">
+    <div class="map-box">
+      <div>
+        <h2>Find the Head Office</h2>
+        <p>
+          ABATE Building, 1st Floor, Room 122B,
+          near Shala Park, Bole Atlas, Bole Sub-City, Addis Ababa.
+        </p>
+        <a
+          class="btn btn-secondary"
+          href="https://www.google.com/maps/search/?api=1&amp;query=ABATE+Building+Bole+Atlas+Addis+Ababa"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open in Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="container footer-container">
+
     <div class="footer-about">
       <img src="../assets/logos/sbs-buttom-logo.png" alt="SBS Logo">
-      <p>Engineering solutions focused on quality, reliability, and long-term value.</p>
+      <p>
+        Engineering solutions focused on quality, reliability,
+        and long-term value.
+      </p>
+
       <div class="footer-socials" aria-label="Social media">
-        <a href="https://t.me/sbsengineering" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/></svg></a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/></svg></a>
-        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.2-1.6-4.4-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.4-.1-.6-.1-.1-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/></svg></a>
+
+        <a href="https://t.me/sbsengineering"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Telegram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.7 3.2 2.9 10.5c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.9 5.8c.2.6.1.8.7.8.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15.2c.3-1.2-.5-1.7-1.2-1.3zM8.3 13.2l10.8-6.8c.5-.3 1-.1.6.2L10.5 15c-.4.4-.8.7-.9 1.5l-.1 1.4-1.2-4.7z"/>
+          </svg>
+        </a>
+
+        <a href="https://web.facebook.com/profile.php?id=61595824465606&amp;sk=grid"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 22v-8h2.8l.4-3h-3.2V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.3v3h2.8v8h3.4z"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.3zM12.2 21.6c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 1 1 8.7 4.9zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.2-1.6-4.4-3.7-.3-.5.3-.5.8-1.6.1-.2 0-.4-.1-.6-.1-.1-.7-1.6-1-2.2-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.4.3-.7.3-1.3-.2-1.4-.1-.1-.3-.2-.6-.3z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/berhan-eshetu-12013727a/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 3h-17C2.7 3 2 3.7 2 4.5v15c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-15c0-.8-.7-1.5-1.5-1.5zM8 18H5V9h3v9zM6.5 7.7A1.8 1.8 0 1 1 6.5 4a1.8 1.8 0 0 1 0 3.7zM19 18h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V18h-3V9h2.9v1.2h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V18z"/>
+          </svg>
+        </a>
+
       </div>
     </div>
 
@@ -92,11 +484,16 @@
     <div>
       <h3>Contact</h3>
       <ul>
-        <li>Bole Sub-City, Addis Ababa</li>
+        <li>ABATE Building, 1st Floor, Room 122B<br>near Shala Park, Bole Atlas<br>Bole Sub-City, Addis Ababa, Ethiopia</li>
         <li><a href="tel:+251997002023">+251 997 00 20 23</a></li>
-        <li><a href="mailto:sbsengineeringconsultancy@gmail.com">sbsengineeringconsultancy@gmail.com</a></li>
+        <li>
+          <a href="mailto:sbsengineeringconsultancy@gmail.com">
+            sbsengineeringconsultancy@gmail.com
+          </a>
+        </li>
       </ul>
     </div>
+
   </div>
 
   <div class="copyright">
@@ -105,22 +502,30 @@
     </div>
   </div>
 </footer>
+
 <button id="scrollTop" type="button" aria-label="Back to top">↑</button>
 
-
 <div class="detail-modal" id="detailModal" aria-hidden="true">
-  <div class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-    <button class="detail-close" type="button" data-modal-close aria-label="Close details">×</button>
+  <div class="detail-dialog"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="detailTitle">
+
+    <button class="detail-close"
+            type="button"
+            data-modal-close
+            aria-label="Close details">×</button>
+
     <div class="detail-kicker" data-modal-kicker>Details</div>
     <h2 id="detailTitle" data-modal-title>SBS Engineering Consultancy</h2>
     <div class="detail-body" data-modal-body></div>
   </div>
 </div>
 
-
 <script src="../js/main.js" defer></script>
 <script src="../js/slider.js" defer></script>
 <script src="../js/animation.js" defer></script>
 <script src="../js/ai-widget.js"></script>
+
 </body>
 </html>
