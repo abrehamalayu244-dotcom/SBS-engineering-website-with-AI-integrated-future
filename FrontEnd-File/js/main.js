@@ -835,3 +835,4 @@ function getAiPagePath() {
   return "pages/ai.html";
 
 }
+

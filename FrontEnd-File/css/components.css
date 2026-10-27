@@ -1174,3 +1174,1185 @@
     gap: 14px !important;
   }
 }
+
+
+
+
+/* ============================================================
+   SBS ENGINEERING CONSULTANCY
+   CLIENT RECOGNITION & PROJECT EXPERIENCE
+   Complete section stylesheet
+   ============================================================ */
+
+/* ---------- SECTION FOUNDATION ---------- */
+
+.recognition-section {
+  position: relative;
+  padding: 90px 0;
+  overflow: hidden;
+  background: #f5f7fa;
+  color: #24364b;
+}
+
+.recognition-section *,
+.recognition-section *::before,
+.recognition-section *::after {
+  box-sizing: border-box;
+}
+
+.recognition-section .container {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* ---------- MAIN SECTION HEADING ---------- */
+
+.recognition-section .section-heading {
+  max-width: 790px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.recognition-section .section-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #b88746;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.recognition-section .section-heading h2 {
+  margin: 0 0 18px;
+  color: #142d4e;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+}
+
+.recognition-section .section-heading > p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #637083;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* ---------- SUBSECTION HEADINGS ---------- */
+
+.recognition-subheading {
+  margin: 0 0 24px;
+}
+
+.recognition-subheading h3 {
+  margin: 0 0 9px;
+  color: #173454;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.recognition-subheading p {
+  max-width: 740px;
+  margin: 0;
+  color: #68778a;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.recognition-subheading-spaced {
+  margin-top: 70px;
+}
+
+/* ---------- CARD GRID ---------- */
+
+.recognition-section .recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 25px;
+}
+
+.recognition-section .recognition-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- SHARED CARD DESIGN ---------- */
+
+.recognition-section .recognition-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 27px;
+  overflow: hidden;
+  border: 1px solid #e2e8ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgb(20 45 78 / 5%);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.recognition-section .recognition-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9a36e;
+  box-shadow: 0 17px 38px rgb(20 45 78 / 10%);
+}
+
+.recognition-section .recognition-card:focus-within {
+  border-color: #b88746;
+}
+
+/* ---------- CARD TOP ROW ---------- */
+
+.recognition-section .recognition-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 23px;
+}
+
+.recognition-section .recognition-number {
+  color: #b88746;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.recognition-section .recognition-tag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 7px 11px;
+  border: 1px solid #e4ebf3;
+  border-radius: 30px;
+  background: #f0f4f8;
+  color: #294c70;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+/* ---------- CARD TITLES AND DESCRIPTIONS ---------- */
+
+.recognition-section .recognition-card h3 {
+  margin: 0 0 15px;
+  color: #173454;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.recognition-section .recognition-description {
+  flex: 1;
+  margin: 0;
+  color: #5d6c7e;
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- CARD DIVIDER ---------- */
+
+.recognition-section .recognition-divider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  margin: 25px 0;
+  background: #e8edf3;
+}
+
+/* ---------- SOURCE / REFERENCE DETAILS ---------- */
+
+.recognition-section .recognition-source {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 13px;
+  margin: 0 0 23px;
+}
+
+.recognition-section .recognition-monogram {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border: 1px solid #ead9bf;
+  border-radius: 50%;
+  background: #fbf6ed;
+  color: #946a31;
+  font-size: 0.9rem;
+  font-weight: 850;
+  letter-spacing: 0.5px;
+}
+
+.recognition-section .recognition-source > div:last-child {
+  min-width: 0;
+}
+
+.recognition-section .recognition-source h4 {
+  margin: 0 0 5px;
+  color: #2b4057;
+  font-size: 0.83rem;
+  font-weight: 800;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.recognition-section .recognition-source p {
+  margin: 0;
+  color: #788596;
+  font-size: 0.77rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- PROJECT REFERENCE BUTTONS ---------- */
+
+.recognition-section .recognition-details-btn {
+  display: flex;
+  width: 100%;
+  min-height: 49px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding: 13px 15px;
+  border: 1px solid #173454;
+  border-radius: 7px;
+  background: #173454;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.recognition-section .recognition-details-btn span {
+  flex: 0 0 auto;
+  font-size: 1.05rem;
+  transition: transform 0.22s ease;
+}
+
+.recognition-section .recognition-details-btn:hover {
+  border-color: #b88746;
+  background: #b88746;
+  box-shadow: 0 5px 14px rgb(184 135 70 / 20%);
+}
+
+.recognition-section .recognition-details-btn:hover span {
+  transform: translate(3px, -2px);
+}
+
+.recognition-section .recognition-details-btn:focus-visible {
+  outline: 3px solid #d8b77f;
+  outline-offset: 4px;
+}
+
+.recognition-section .recognition-details-btn:active {
+  transform: translateY(1px);
+}
+
+/* ============================================================
+   SIDAMA DOCUMENT IMAGE CARDS
+   ============================================================ */
+
+/* Image card has its own content wrapper. */
+
+.recognition-section .recognition-document-card {
+  padding: 0;
+  align-self: stretch;
+}
+
+.recognition-section .recognition-document-image {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 240px;
+  max-height: 340px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #e9edf2;
+  border-bottom: 1px solid #e2e8ef;
+}
+
+.recognition-section .recognition-document-image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  max-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  background: #e9edf2;
+  transition: transform 0.35s ease;
+}
+
+.recognition-section .recognition-document-card:hover
+.recognition-document-image img {
+  transform: scale(1.025);
+}
+
+.recognition-section .recognition-image-label {
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 5px;
+  background: #173454;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.4;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 12%);
+}
+
+/* Content below each Sidama image. */
+
+.recognition-section .recognition-card-content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 26px;
+}
+
+.recognition-section .recognition-card-content > .recognition-tag {
+  align-self: flex-start;
+  margin-bottom: 15px;
+}
+
+.recognition-section .recognition-card-content h3 {
+  margin: 0 0 13px;
+}
+
+.recognition-section .recognition-card-content .recognition-description {
+  margin-bottom: 25px;
+}
+
+.recognition-section .recognition-card-content .recognition-details-btn {
+  margin-top: auto;
+}
+
+/* ============================================================
+   REVEAL ANIMATION COMPATIBILITY
+   Works with the existing .reveal / .show animation classes.
+   ============================================================ */
+
+.recognition-section .recognition-card.reveal {
+  transition:
+    opacity 0.55s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+/* ============================================================
+   TABLET RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .recognition-section {
+    padding: 75px 0;
+  }
+
+  .recognition-section .container {
+    width: min(900px, calc(100% - 40px));
+  }
+
+  .recognition-section .recognition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .recognition-section .recognition-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recognition-section .recognition-card {
+    padding: 24px;
+  }
+
+  .recognition-section .recognition-document-card {
+    padding: 0;
+  }
+
+  .recognition-section .recognition-card-content {
+    padding: 23px;
+  }
+
+  .recognition-subheading-spaced {
+    margin-top: 58px;
+  }
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 620px) {
+  .recognition-section {
+    padding: 58px 0;
+  }
+
+  .recognition-section .container {
+    width: calc(100% - 32px);
+  }
+
+  .recognition-section .section-heading {
+    margin-bottom: 38px;
+    text-align: left;
+  }
+
+  .recognition-section .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 1.6px;
+  }
+
+  .recognition-section .section-heading h2 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+  }
+
+  .recognition-section .section-heading > p {
+    font-size: 0.94rem;
+    line-height: 1.8;
+  }
+
+  .recognition-subheading {
+    margin-bottom: 18px;
+  }
+
+  .recognition-subheading h3 {
+    font-size: 1.3rem;
+  }
+
+  .recognition-subheading p {
+    font-size: 0.9rem;
+  }
+
+  .recognition-subheading-spaced {
+    margin-top: 44px;
+  }
+
+  .recognition-section .recognition-grid,
+  .recognition-section .recognition-grid-two {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .recognition-section .recognition-card {
+    padding: 22px;
+    border-radius: 11px;
+  }
+
+  .recognition-section .recognition-document-card {
+    padding: 0;
+  }
+
+  .recognition-section .recognition-card-top {
+    margin-bottom: 19px;
+  }
+
+  .recognition-section .recognition-card h3 {
+    font-size: 1.13rem;
+  }
+
+  .recognition-section .recognition-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .recognition-section .recognition-divider {
+    margin: 21px 0;
+  }
+
+  .recognition-section .recognition-document-image {
+    min-height: 200px;
+    max-height: 290px;
+  }
+
+  .recognition-section .recognition-document-image img {
+    height: 260px;
+    max-height: 290px;
+  }
+
+  .recognition-section .recognition-card-content {
+    padding: 22px;
+  }
+
+  .recognition-section .recognition-details-btn {
+    min-height: 48px;
+    padding: 12px 13px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .recognition-section .recognition-card,
+  .recognition-section .recognition-document-image img,
+  .recognition-section .recognition-details-btn,
+  .recognition-section .recognition-details-btn span {
+    scroll-behavior: auto;
+    animation: none;
+    transition: none;
+  }
+
+  .recognition-section .recognition-card:hover {
+    transform: none;
+  }
+
+  .recognition-section .recognition-document-card:hover
+  .recognition-document-image img {
+    transform: none;
+  }
+}
+
+
+/* =========================================
+   SIDAMA CLIENT DOCUMENT CARDS
+========================================= */
+
+.recognition-section {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.recognition-section .container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.recognition-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.recognition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 36px rgba(15, 23, 42, 0.12);
+}
+
+/* Document image displayed in the card */
+.recognition-document-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  max-height: 430px;
+  padding: 16px;
+  overflow: hidden;
+  background: #f3f5f8;
+}
+
+.recognition-document-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 390px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 4px;
+}
+
+/* Small label over the image */
+.recognition-image-label {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 7px 12px;
+  color: #fff;
+  background: rgba(20, 45, 75, 0.88);
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Text content */
+.recognition-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.recognition-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #1d5b91;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recognition-card-content h3 {
+  margin: 0 0 14px;
+  color: #172b43;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.recognition-description {
+  margin: 0 0 22px;
+  color: #5b6573;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+/* Document open button */
+.recognition-details-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 12px 18px;
+  border: 1px solid #174a78;
+  border-radius: 6px;
+  color: #fff;
+  background: #174a78;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.recognition-details-btn:hover {
+  background: #103758;
+  border-color: #103758;
+  transform: translateY(-1px);
+}
+
+.recognition-details-btn:focus-visible {
+  outline: 3px solid #83bdf0;
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   FULL-SCREEN DOCUMENT VIEWER
+========================================= */
+
+.document-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 24px 24px;
+
+  background: rgba(0, 0, 0, 0.96);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.document-viewer.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Only the document image appears inside the viewer */
+.document-viewer-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.35);
+  user-select: none;
+}
+
+/* Close button */
+.document-viewer-close {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.document-viewer-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.06);
+}
+
+.document-viewer-close:focus-visible {
+  outline: 3px solid #83bdf0;
+  outline-offset: 4px;
+}
+
+/* Prevent page scrolling while the viewer is open */
+body.document-viewer-open {
+  overflow: hidden;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 800px) {
+  .recognition-grid {
+    gap: 22px;
+  }
+
+  .recognition-document-image {
+    min-height: 220px;
+  }
+
+  .recognition-card-content {
+    padding: 20px;
+  }
+
+  .recognition-card-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .recognition-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recognition-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .recognition-document-image {
+    min-height: 200px;
+    max-height: 350px;
+  }
+
+  .recognition-document-image img {
+    max-height: 320px;
+  }
+
+  .recognition-card-content {
+    padding: 20px;
+  }
+
+  .recognition-details-btn {
+    width: 100%;
+  }
+
+  .document-viewer {
+    padding: 65px 10px 12px;
+  }
+
+  .document-viewer-close {
+    top: 10px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recognition-card,
+  .recognition-details-btn,
+  .document-viewer,
+  .document-viewer-close {
+    transition: none;
+  }
+}
+
+
+
+
+/* =========================================================
+   HOME TESTIMONIALS — SCOPED COMPONENT STYLES
+   ========================================================= */
+
+.home-testimonials {
+    position: relative;
+    padding: 80px 0;
+    background: #f5f7fa;
+    color: #24364b;
+}
+
+.home-testimonials *,
+.home-testimonials *::before,
+.home-testimonials *::after {
+    box-sizing: border-box;
+}
+
+.home-testimonials .container {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+/* Section heading */
+
+.home-testimonials .section-title {
+    max-width: 790px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.home-testimonials .section-title .section-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #b88746;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.home-testimonials .section-title h2 {
+    margin: 0 0 16px;
+    color: #142d4e;
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.home-testimonials .section-title p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #637083;
+    font-size: .98rem;
+    line-height: 1.85;
+}
+
+/* Document card grid */
+
+.home-testimonials .recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 26px;
+}
+
+/* Cards */
+
+.home-testimonials .recognition-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e2e8ef;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgb(20 45 78 / 5%);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.home-testimonials .recognition-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9a36e;
+    box-shadow: 0 17px 38px rgb(20 45 78 / 10%);
+}
+
+/* Document preview */
+
+.home-testimonials .recognition-document {
+    display: flex;
+    min-height: 240px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #e2e8ef;
+    background: #e9edf2;
+}
+
+.home-testimonials .recognition-document img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform .3s ease;
+}
+
+.home-testimonials .recognition-card:hover
+.recognition-document img {
+    transform: scale(1.02);
+}
+
+/* Card text */
+
+.home-testimonials .recognition-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+}
+
+.home-testimonials .recognition-content .section-tag {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a77a38;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.home-testimonials .recognition-content h3 {
+    margin: 0 0 13px;
+    color: #173454;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.home-testimonials .recognition-content p {
+    flex: 1;
+    margin: 0 0 24px;
+    color: #5d6c7e;
+    font-size: .92rem;
+    line-height: 1.85;
+}
+
+/* Card buttons */
+
+.home-testimonials .recognition-content .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.home-testimonials .recognition-content .btn:focus-visible,
+.home-testimonials .recognition-document:focus-visible,
+.home-testimonials .recognition-footer .btn:focus-visible {
+    outline: 3px solid #c9a36e;
+    outline-offset: 4px;
+}
+
+/* Bottom link */
+
+.home-testimonials .recognition-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+    .home-testimonials {
+        padding: 65px 0;
+    }
+
+    .home-testimonials .container {
+        width: min(680px, calc(100% - 36px));
+    }
+
+    .home-testimonials .recognition-grid {
+        gap: 20px;
+    }
+
+    .home-testimonials .recognition-document {
+        height: 250px;
+        min-height: 200px;
+    }
+
+    .home-testimonials .recognition-content {
+        padding: 21px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .home-testimonials {
+        padding: 48px 0;
+    }
+
+    .home-testimonials .container {
+        width: calc(100% - 32px);
+    }
+
+    .home-testimonials .section-title {
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .home-testimonials .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-testimonials .section-title p {
+        font-size: .92rem;
+    }
+
+    .home-testimonials .recognition-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .home-testimonials .recognition-document {
+        height: 270px;
+    }
+
+    .home-testimonials .recognition-content {
+        padding: 22px;
+    }
+
+    .home-testimonials .recognition-footer .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-testimonials .recognition-card,
+    .home-testimonials .recognition-document img {
+        transition: none;
+    }
+
+    .home-testimonials .recognition-card:hover,
+    .home-testimonials .recognition-card:hover
+    .recognition-document img {
+        transform: none;
+    }
+}
+
+
+/* Full-screen document close button fix */
+.document-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+}
+
+.document-viewer-close {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    z-index: 100002;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+
+    background: rgba(30, 30, 30, 0.8);
+    color: #fff;
+
+    font-size: 36px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.document-viewer-close:hover {
+    background: #b88746;
+    color: #fff;
+}
+
+.document-viewer-close:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .document-viewer-close {
+        top: 10px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+    }
+}
